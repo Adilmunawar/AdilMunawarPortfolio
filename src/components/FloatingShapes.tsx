@@ -4,78 +4,96 @@ const FloatingShapes = () => {
     {
       name: 'React',
       image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-      top: '10%',
-      left: '5%',
-      size: 'w-24 h-24',
-      animation: 'animate-float'
+      top: '8%',
+      left: '3%',
+      size: 'w-40 h-40',
+      animation: 'animate-drift-1'
     },
     {
       name: 'Node.js',
       image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-      top: '20%',
-      right: '8%',
-      size: 'w-28 h-28',
-      animation: 'animate-float-delayed'
+      top: '15%',
+      right: '5%',
+      size: 'w-44 h-44',
+      animation: 'animate-drift-2'
     },
     {
       name: 'TypeScript',
       image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-      bottom: '15%',
-      left: '10%',
-      size: 'w-32 h-32',
-      animation: 'animate-float'
+      bottom: '12%',
+      left: '8%',
+      size: 'w-48 h-48',
+      animation: 'animate-drift-3'
     },
     {
       name: 'Next.js',
       image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-      top: '60%',
-      right: '5%',
-      size: 'w-26 h-26',
-      animation: 'animate-float-delayed'
+      top: '55%',
+      right: '2%',
+      size: 'w-38 h-38',
+      animation: 'animate-drift-4'
     },
     {
-      name: 'MongoDB',
-      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-      bottom: '30%',
-      right: '15%',
-      size: 'w-30 h-30',
-      animation: 'animate-float'
+      name: 'Supabase',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg',
+      bottom: '25%',
+      right: '12%',
+      size: 'w-42 h-42',
+      animation: 'animate-drift-5'
     },
     {
       name: 'Python',
       image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-      top: '40%',
-      left: '3%',
-      size: 'w-28 h-28',
-      animation: 'animate-float-delayed'
+      top: '35%',
+      left: '1%',
+      size: 'w-40 h-40',
+      animation: 'animate-drift-6'
     },
     {
       name: 'JavaScript',
       image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-      top: '75%',
-      left: '12%',
-      size: 'w-24 h-24',
-      animation: 'animate-float'
+      top: '72%',
+      left: '10%',
+      size: 'w-36 h-36',
+      animation: 'animate-drift-1'
     },
     {
-      name: 'PostgreSQL',
-      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-      bottom: '50%',
-      right: '25%',
-      size: 'w-26 h-26',
-      animation: 'animate-float-delayed'
+      name: 'SQL',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg',
+      bottom: '45%',
+      right: '20%',
+      size: 'w-38 h-38',
+      animation: 'animate-drift-2'
+    },
+    {
+      name: 'Express.js',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
+      top: '80%',
+      right: '8%',
+      size: 'w-35 h-35',
+      animation: 'animate-drift-3'
+    },
+    {
+      name: 'Tailwind CSS',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
+      bottom: '60%',
+      left: '25%',
+      size: 'w-37 h-37',
+      animation: 'animate-drift-4'
     }
   ];
 
   const geometricShapes = [
-    { shape: '◇', top: '15%', left: '20%', color: 'text-cyber-cyan/30', size: 'text-4xl' },
-    { shape: '○', bottom: '25%', right: '30%', color: 'text-cyber-blue/20', size: 'text-5xl' },
-    { shape: '△', top: '70%', left: '25%', color: 'text-cyber-cyan/25', size: 'text-3xl' },
-    { shape: '□', top: '30%', right: '40%', color: 'text-cyber-blue/30', size: 'text-4xl' },
-    { shape: '◯', bottom: '60%', left: '35%', color: 'text-cyber-cyan/20', size: 'text-6xl' },
-    { shape: '◈', top: '85%', right: '20%', color: 'text-cyber-blue/25', size: 'text-3xl' },
-    { shape: '◊', top: '50%', left: '80%', color: 'text-cyber-cyan/30', size: 'text-4xl' },
-    { shape: '▽', bottom: '10%', left: '60%', color: 'text-cyber-blue/20', size: 'text-5xl' }
+    { shape: '◇', top: '18%', left: '22%', color: 'text-cyber-cyan/20', size: 'text-3xl', animation: 'animate-drift-delayed-1' },
+    { shape: '○', bottom: '28%', right: '35%', color: 'text-cyber-blue/15', size: 'text-4xl', animation: 'animate-drift-delayed-2' },
+    { shape: '△', top: '75%', left: '28%', color: 'text-cyber-cyan/18', size: 'text-2xl', animation: 'animate-drift-delayed-3' },
+    { shape: '□', top: '32%', right: '45%', color: 'text-cyber-blue/20', size: 'text-3xl', animation: 'animate-drift-delayed-4' },
+    { shape: '◯', bottom: '65%', left: '40%', color: 'text-cyber-cyan/15', size: 'text-5xl', animation: 'animate-drift-delayed-5' },
+    { shape: '◈', top: '88%', right: '25%', color: 'text-cyber-blue/18', size: 'text-2xl', animation: 'animate-drift-delayed-6' },
+    { shape: '◊', top: '48%', left: '85%', color: 'text-cyber-cyan/20', size: 'text-3xl', animation: 'animate-drift-delayed-1' },
+    { shape: '▽', bottom: '8%', left: '65%', color: 'text-cyber-blue/15', size: 'text-4xl', animation: 'animate-drift-delayed-2' },
+    { shape: '◢', top: '25%', left: '50%', color: 'text-cyber-cyan/12', size: 'text-3xl', animation: 'animate-drift-delayed-3' },
+    { shape: '◤', bottom: '35%', right: '55%', color: 'text-cyber-blue/14', size: 'text-2xl', animation: 'animate-drift-delayed-4' }
   ];
 
   return (
@@ -84,21 +102,21 @@ const FloatingShapes = () => {
       {frameworkLogos.map((logo, index) => (
         <div
           key={`logo-${index}`}
-          className={`absolute ${logo.size} ${logo.animation} opacity-20 hover:opacity-40 transition-all duration-1000 ease-in-out`}
+          className={`absolute ${logo.size} ${logo.animation} opacity-25 hover:opacity-50 transition-all duration-1000 ease-in-out`}
           style={{
             top: logo.top,
             left: logo.left,
             right: logo.right,
             bottom: logo.bottom,
-            filter: 'drop-shadow(0 0 15px rgba(0, 255, 255, 0.3))',
-            animationDelay: `${index * 2}s`,
-            animationDuration: '8s'
+            filter: 'drop-shadow(0 0 20px rgba(0, 255, 255, 0.4))',
+            animationDelay: `${index * 3}s`,
+            animationDuration: '25s'
           }}
         >
           <img 
             src={logo.image} 
             alt={logo.name}
-            className="w-full h-full object-contain transition-transform duration-1000 hover:scale-110 hover:rotate-12"
+            className="w-full h-full object-contain transition-all duration-1000 hover:scale-110 hover:rotate-12 hover:brightness-125"
           />
         </div>
       ))}
@@ -107,14 +125,14 @@ const FloatingShapes = () => {
       {geometricShapes.map((shape, index) => (
         <div
           key={`shape-${index}`}
-          className={`absolute ${shape.color} ${shape.size} animate-float-delayed transition-all duration-1000`}
+          className={`absolute ${shape.color} ${shape.size} ${shape.animation} transition-all duration-1000`}
           style={{
             top: shape.top,
             left: shape.left,
             right: shape.right,
             bottom: shape.bottom,
-            animationDelay: `${index * 1.5}s`,
-            animationDuration: '10s'
+            animationDelay: `${index * 2}s`,
+            animationDuration: '20s'
           }}
         >
           {shape.shape}

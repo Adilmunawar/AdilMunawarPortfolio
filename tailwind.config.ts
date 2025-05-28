@@ -26,6 +26,14 @@ export default {
 				'28': '7rem',
 				'30': '7.5rem',
 				'32': '8rem',
+				'35': '8.75rem',
+				'36': '9rem',
+				'37': '9.25rem',
+				'38': '9.5rem',
+				'40': '10rem',
+				'42': '10.5rem',
+				'44': '11rem',
+				'48': '12rem',
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -110,6 +118,82 @@ export default {
 					'33%': { transform: 'translateY(-20px) rotate(-3deg)' },
 					'66%': { transform: 'translateY(-10px) rotate(3deg)' }
 				},
+				'drift-1': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg) scale(1)' },
+					'25%': { transform: 'translate(30px, -20px) rotate(5deg) scale(1.05)' },
+					'50%': { transform: 'translate(-15px, -40px) rotate(-3deg) scale(0.95)' },
+					'75%': { transform: 'translate(-25px, 10px) rotate(8deg) scale(1.1)' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg) scale(1)' }
+				},
+				'drift-2': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg) scale(1)' },
+					'25%': { transform: 'translate(-20px, 30px) rotate(-4deg) scale(0.9)' },
+					'50%': { transform: 'translate(40px, 15px) rotate(6deg) scale(1.15)' },
+					'75%': { transform: 'translate(10px, -25px) rotate(-7deg) scale(0.85)' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg) scale(1)' }
+				},
+				'drift-3': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg) scale(1)' },
+					'25%': { transform: 'translate(25px, 35px) rotate(7deg) scale(1.08)' },
+					'50%': { transform: 'translate(-30px, -10px) rotate(-5deg) scale(0.92)' },
+					'75%': { transform: 'translate(15px, -35px) rotate(9deg) scale(1.12)' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg) scale(1)' }
+				},
+				'drift-4': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg) scale(1)' },
+					'25%': { transform: 'translate(-35px, -15px) rotate(-6deg) scale(0.88)' },
+					'50%': { transform: 'translate(20px, 40px) rotate(4deg) scale(1.18)' },
+					'75%': { transform: 'translate(-10px, 25px) rotate(-8deg) scale(0.94)' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg) scale(1)' }
+				},
+				'drift-5': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg) scale(1)' },
+					'25%': { transform: 'translate(40px, -30px) rotate(8deg) scale(1.06)' },
+					'50%': { transform: 'translate(-25px, 20px) rotate(-4deg) scale(0.96)' },
+					'75%': { transform: 'translate(35px, 35px) rotate(6deg) scale(1.14)' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg) scale(1)' }
+				},
+				'drift-6': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg) scale(1)' },
+					'25%': { transform: 'translate(-40px, 25px) rotate(-9deg) scale(0.86)' },
+					'50%': { transform: 'translate(35px, -35px) rotate(7deg) scale(1.16)' },
+					'75%': { transform: 'translate(-20px, -10px) rotate(-5deg) scale(0.98)' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg) scale(1)' }
+				},
+				'drift-delayed-1': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg)' },
+					'30%': { transform: 'translate(15px, -25px) rotate(3deg)' },
+					'60%': { transform: 'translate(-20px, 10px) rotate(-4deg)' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg)' }
+				},
+				'drift-delayed-2': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg)' },
+					'35%': { transform: 'translate(-18px, 22px) rotate(-3deg)' },
+					'70%': { transform: 'translate(25px, -15px) rotate(5deg)' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg)' }
+				},
+				'drift-delayed-3': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg)' },
+					'40%': { transform: 'translate(22px, 18px) rotate(4deg)' },
+					'80%': { transform: 'translate(-15px, -20px) rotate(-2deg)' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg)' }
+				},
+				'drift-delayed-4': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg)' },
+					'45%': { transform: 'translate(-25px, -12px) rotate(-5deg)' },
+					'90%': { transform: 'translate(18px, 28px) rotate(3deg)' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg)' }
+				},
+				'drift-delayed-5': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg)' },
+					'50%': { transform: 'translate(28px, -22px) rotate(6deg)' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg)' }
+				},
+				'drift-delayed-6': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg)' },
+					'55%': { transform: 'translate(-20px, 25px) rotate(-4deg)' },
+					'100%': { transform: 'translate(0, 0) rotate(0deg)' }
+				},
 				'rotate-slow': {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' }
@@ -128,6 +212,18 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'float': 'float 8s ease-in-out infinite',
 				'float-delayed': 'float-delayed 10s ease-in-out infinite',
+				'drift-1': 'drift-1 25s ease-in-out infinite',
+				'drift-2': 'drift-2 30s ease-in-out infinite',
+				'drift-3': 'drift-3 28s ease-in-out infinite',
+				'drift-4': 'drift-4 32s ease-in-out infinite',
+				'drift-5': 'drift-5 26s ease-in-out infinite',
+				'drift-6': 'drift-6 29s ease-in-out infinite',
+				'drift-delayed-1': 'drift-delayed-1 20s ease-in-out infinite',
+				'drift-delayed-2': 'drift-delayed-2 22s ease-in-out infinite',
+				'drift-delayed-3': 'drift-delayed-3 18s ease-in-out infinite',
+				'drift-delayed-4': 'drift-delayed-4 24s ease-in-out infinite',
+				'drift-delayed-5': 'drift-delayed-5 21s ease-in-out infinite',
+				'drift-delayed-6': 'drift-delayed-6 23s ease-in-out infinite',
 				'rotate-slow': 'rotate-slow 20s linear infinite',
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
 				'scale-in': 'scale-in 0.5s ease-out'

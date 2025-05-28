@@ -39,12 +39,12 @@ const AboutSection = () => {
       image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' 
     },
     { 
-      name: 'MongoDB', 
-      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' 
+      name: 'SQL', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg' 
     },
     { 
-      name: 'PostgreSQL', 
-      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' 
+      name: 'Supabase', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg' 
     },
     { 
       name: 'Firebase', 
