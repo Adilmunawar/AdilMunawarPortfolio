@@ -1,47 +1,143 @@
 
-import { Code2, Database, Smartphone, Globe, Cpu, Zap } from 'lucide-react';
-
 const FloatingShapes = () => {
-  const shapes = [
-    { Icon: Code2, top: '10%', left: '10%', animation: 'animate-float', size: 40 },
-    { Icon: Database, top: '20%', right: '15%', animation: 'animate-float-delayed', size: 35 },
-    { Icon: Smartphone, top: '60%', left: '5%', animation: 'animate-float', size: 30 },
-    { Icon: Globe, bottom: '20%', right: '20%', animation: 'animate-float-delayed', size: 45 },
-    { Icon: Cpu, top: '80%', left: '80%', animation: 'animate-float', size: 38 },
-    { Icon: Zap, top: '40%', right: '5%', animation: 'animate-float-delayed', size: 32 },
+  const frameworkImages = [
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+      alt: 'React',
+      top: '10%', 
+      left: '10%', 
+      animation: 'animate-float', 
+      size: 'w-10 h-10' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+      alt: 'Node.js',
+      top: '20%', 
+      right: '15%', 
+      animation: 'animate-float-delayed', 
+      size: 'w-9 h-9' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
+      alt: 'Vue.js',
+      top: '60%', 
+      left: '5%', 
+      animation: 'animate-float', 
+      size: 'w-8 h-8' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg',
+      alt: 'Angular',
+      bottom: '20%', 
+      right: '20%', 
+      animation: 'animate-float-delayed', 
+      size: 'w-11 h-11' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+      alt: 'Python',
+      top: '80%', 
+      left: '80%', 
+      animation: 'animate-float', 
+      size: 'w-10 h-10' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+      alt: 'MongoDB',
+      top: '40%', 
+      right: '5%', 
+      animation: 'animate-float-delayed', 
+      size: 'w-8 h-8' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+      alt: 'Next.js',
+      top: '15%', 
+      left: '70%', 
+      animation: 'animate-float', 
+      size: 'w-9 h-9' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
+      alt: 'Express.js',
+      bottom: '30%', 
+      left: '30%', 
+      animation: 'animate-float-delayed', 
+      size: 'w-10 h-10' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+      alt: 'TypeScript',
+      top: '50%', 
+      left: '85%', 
+      animation: 'animate-float', 
+      size: 'w-8 h-8' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+      alt: 'Tailwind CSS',
+      bottom: '10%', 
+      right: '10%', 
+      animation: 'animate-float-delayed', 
+      size: 'w-9 h-9' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+      alt: 'PostgreSQL',
+      top: '35%', 
+      left: '15%', 
+      animation: 'animate-float', 
+      size: 'w-8 h-8' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+      alt: 'Docker',
+      bottom: '40%', 
+      right: '35%', 
+      animation: 'animate-float-delayed', 
+      size: 'w-10 h-10' 
+    }
   ];
 
   const geometricShapes = [
-    { shape: 'hexagon', top: '15%', left: '80%', color: 'text-green-400', size: 'w-8 h-8' },
-    { shape: 'square', top: '70%', left: '15%', color: 'text-yellow-400', size: 'w-6 h-6' },
-    { shape: 'triangle', bottom: '10%', left: '60%', color: 'text-purple-400', size: 'w-10 h-10' },
-    { shape: 'circle', top: '30%', left: '70%', color: 'text-blue-400', size: 'w-7 h-7' },
+    { shape: 'hexagon', top: '25%', right: '8%', color: 'text-green-400', size: 'w-6 h-6' },
+    { shape: 'square', top: '70%', left: '25%', color: 'text-yellow-400', size: 'w-5 h-5' },
+    { shape: 'triangle', bottom: '15%', left: '50%', color: 'text-purple-400', size: 'w-7 h-7' },
+    { shape: 'circle', top: '45%', right: '25%', color: 'text-blue-400', size: 'w-5 h-5' },
+    { shape: 'hexagon', bottom: '35%', left: '8%', color: 'text-pink-400', size: 'w-6 h-6' },
+    { shape: 'square', top: '5%', left: '45%', color: 'text-cyan-400', size: 'w-4 h-4' },
   ];
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
-      {shapes.map((shape, index) => (
+      {frameworkImages.map((framework, index) => (
         <div
           key={index}
-          className={`floating-shape ${shape.animation}`}
+          className={`floating-shape ${framework.animation}`}
           style={{
-            top: shape.top,
-            left: shape.left,
-            right: shape.right,
-            bottom: shape.bottom,
+            top: framework.top,
+            left: framework.left,
+            right: framework.right,
+            bottom: framework.bottom,
           }}
         >
-          <shape.Icon size={shape.size} className="text-cyber-cyan" />
+          <img 
+            src={framework.src} 
+            alt={framework.alt}
+            className={`${framework.size} opacity-20 hover:opacity-40 transition-opacity duration-300`}
+            loading="lazy"
+          />
         </div>
       ))}
 
       {geometricShapes.map((shape, index) => (
         <div
           key={`geo-${index}`}
-          className={`floating-shape animate-rotate-slow ${shape.color} ${shape.size}`}
+          className={`floating-shape animate-rotate-slow ${shape.color} ${shape.size} opacity-10`}
           style={{
             top: shape.top,
             left: shape.left,
+            right: shape.right,
             bottom: shape.bottom,
           }}
         >
