@@ -2,7 +2,9 @@
 
 <div align="center">
 
-![Portfolio Banner](https://via.placeholder.com/800x200/0066cc/ffffff?text=Adil+Munawar+Portfolio)
+![Portfolio Banner](https://github.com/Adilmunawar/AdilPortfolio/blob/main/public/Screenshot%202025-05-28%20213514.png)
+![Portfolio Banner](https://github.com/Adilmunawar/AdilPortfolio/blob/main/public/Screenshot%202025-05-28%20213528.png)
+
 
 [![GitHub stars](https://img.shields.io/github/stars/adilmunawar/adil-portfolio?style=social)](https://github.com/adilmunawar/adil-portfolio/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/adilmunawar/adil-portfolio?style=social)](https://github.com/adilmunawar/adil-portfolio/network/members)
