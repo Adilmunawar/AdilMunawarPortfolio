@@ -14,7 +14,7 @@
 
 **A stunning, responsive portfolio website showcasing modern web development skills**
 
-[🌐 Live Demo](https://adilmunawar.github.io/adil-portfolio) • [📱 Mobile View](https://adilmunawar.github.io/adil-portfolio) • [🐛 Report Bug](https://github.com/adilmunawar/adil-portfolio/issues) • [✨ Request Feature](https://github.com/adilmunawar/adil-portfolio/issues)
+[🌐 Live Demo](https://adilmunawar.vercel.app) • [📱 Mobile View](https://adilmunawar.vervel.app) • [🐛 Report Bug](https://github.com/adilmunawar/adilportfolio/issues) • [✨ Request Feature](https://github.com/adilmunawar/adilportfolio/issues)
 
 </div>
 
