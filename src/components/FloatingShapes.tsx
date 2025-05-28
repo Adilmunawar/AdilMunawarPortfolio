@@ -42,7 +42,6 @@ const FloatingShapes = () => {
           style={{
             top: shape.top,
             left: shape.left,
-            right: shape.right,
             bottom: shape.bottom,
           }}
         >
