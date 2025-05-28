@@ -1,198 +1,123 @@
 
 const FloatingShapes = () => {
-  const frameworkImages = [
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-      alt: 'React',
-      top: '10%', 
-      left: '10%', 
-      animation: 'animate-float', 
-      size: 'w-16 h-16' 
+  const frameworkLogos = [
+    {
+      name: 'React',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+      top: '10%',
+      left: '5%',
+      size: 'w-24 h-24',
+      animation: 'animate-float'
     },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-      alt: 'Node.js',
-      top: '20%', 
-      right: '15%', 
-      animation: 'animate-float-delayed', 
-      size: 'w-14 h-14' 
+    {
+      name: 'Node.js',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+      top: '20%',
+      right: '8%',
+      size: 'w-28 h-28',
+      animation: 'animate-float-delayed'
     },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-      alt: 'Vue.js',
-      top: '60%', 
-      left: '5%', 
-      animation: 'animate-float', 
-      size: 'w-12 h-12' 
+    {
+      name: 'TypeScript',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+      bottom: '15%',
+      left: '10%',
+      size: 'w-32 h-32',
+      animation: 'animate-float'
     },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg',
-      alt: 'Angular',
-      bottom: '20%', 
-      right: '20%', 
-      animation: 'animate-float-delayed', 
-      size: 'w-18 h-18' 
+    {
+      name: 'Next.js',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+      top: '60%',
+      right: '5%',
+      size: 'w-26 h-26',
+      animation: 'animate-float-delayed'
     },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-      alt: 'Python',
-      top: '80%', 
-      left: '80%', 
-      animation: 'animate-float', 
-      size: 'w-16 h-16' 
+    {
+      name: 'MongoDB',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+      bottom: '30%',
+      right: '15%',
+      size: 'w-30 h-30',
+      animation: 'animate-float'
     },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-      alt: 'MongoDB',
-      top: '40%', 
-      right: '5%', 
-      animation: 'animate-float-delayed', 
-      size: 'w-12 h-12' 
+    {
+      name: 'Python',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+      top: '40%',
+      left: '3%',
+      size: 'w-28 h-28',
+      animation: 'animate-float-delayed'
     },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-      alt: 'Next.js',
-      top: '15%', 
-      left: '70%', 
-      animation: 'animate-float', 
-      size: 'w-14 h-14' 
+    {
+      name: 'JavaScript',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+      top: '75%',
+      left: '12%',
+      size: 'w-24 h-24',
+      animation: 'animate-float'
     },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
-      alt: 'Express.js',
-      bottom: '30%', 
-      left: '30%', 
-      animation: 'animate-float-delayed', 
-      size: 'w-16 h-16' 
-    },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-      alt: 'TypeScript',
-      top: '50%', 
-      left: '85%', 
-      animation: 'animate-float', 
-      size: 'w-12 h-12' 
-    },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
-      alt: 'Tailwind CSS',
-      bottom: '10%', 
-      right: '10%', 
-      animation: 'animate-float-delayed', 
-      size: 'w-14 h-14' 
-    },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-      alt: 'PostgreSQL',
-      top: '35%', 
-      left: '15%', 
-      animation: 'animate-float', 
-      size: 'w-12 h-12' 
-    },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
-      alt: 'Docker',
-      bottom: '40%', 
-      right: '35%', 
-      animation: 'animate-float-delayed', 
-      size: 'w-16 h-16' 
-    },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-      alt: 'JavaScript',
-      top: '25%', 
-      left: '40%', 
-      animation: 'animate-float', 
-      size: 'w-13 h-13' 
-    },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-      alt: 'HTML5',
-      bottom: '50%', 
-      left: '60%', 
-      animation: 'animate-float-delayed', 
-      size: 'w-14 h-14' 
-    },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-      alt: 'CSS3',
-      top: '70%', 
-      right: '50%', 
-      animation: 'animate-float', 
-      size: 'w-12 h-12' 
-    },
-    { 
-      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
-      alt: 'Firebase',
-      bottom: '60%', 
-      right: '60%', 
-      animation: 'animate-float-delayed', 
-      size: 'w-13 h-13' 
+    {
+      name: 'PostgreSQL',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+      bottom: '50%',
+      right: '25%',
+      size: 'w-26 h-26',
+      animation: 'animate-float-delayed'
     }
   ];
 
   const geometricShapes = [
-    { shape: 'hexagon', top: '25%', right: '8%', color: 'text-green-400', size: 'w-8 h-8' },
-    { shape: 'square', top: '70%', left: '25%', color: 'text-yellow-400', size: 'w-7 h-7' },
-    { shape: 'triangle', bottom: '15%', left: '50%', color: 'text-purple-400', size: 'w-9 h-9' },
-    { shape: 'circle', top: '45%', right: '25%', color: 'text-blue-400', size: 'w-7 h-7' },
-    { shape: 'hexagon', bottom: '35%', left: '8%', color: 'text-pink-400', size: 'w-8 h-8' },
-    { shape: 'square', top: '5%', left: '45%', color: 'text-cyan-400', size: 'w-6 h-6' },
-    { shape: 'triangle', top: '85%', right: '30%', color: 'text-orange-400', size: 'w-8 h-8' },
-    { shape: 'circle', bottom: '25%', right: '70%', color: 'text-indigo-400', size: 'w-6 h-6' },
-    { shape: 'hexagon', top: '55%', left: '3%', color: 'text-red-400', size: 'w-7 h-7' },
-    { shape: 'square', bottom: '5%', left: '75%', color: 'text-teal-400', size: 'w-8 h-8' },
+    { shape: '◇', top: '15%', left: '20%', color: 'text-cyber-cyan/30', size: 'text-4xl' },
+    { shape: '○', bottom: '25%', right: '30%', color: 'text-cyber-blue/20', size: 'text-5xl' },
+    { shape: '△', top: '70%', left: '25%', color: 'text-cyber-cyan/25', size: 'text-3xl' },
+    { shape: '□', top: '30%', right: '40%', color: 'text-cyber-blue/30', size: 'text-4xl' },
+    { shape: '◯', bottom: '60%', left: '35%', color: 'text-cyber-cyan/20', size: 'text-6xl' },
+    { shape: '◈', top: '85%', right: '20%', color: 'text-cyber-blue/25', size: 'text-3xl' },
+    { shape: '◊', top: '50%', left: '80%', color: 'text-cyber-cyan/30', size: 'text-4xl' },
+    { shape: '▽', bottom: '10%', left: '60%', color: 'text-cyber-blue/20', size: 'text-5xl' }
   ];
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden">
-      {frameworkImages.map((framework, index) => (
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      {/* Framework Logo Icons */}
+      {frameworkLogos.map((logo, index) => (
         <div
-          key={index}
-          className={`floating-shape ${framework.animation}`}
+          key={`logo-${index}`}
+          className={`absolute ${logo.size} ${logo.animation} opacity-20 hover:opacity-40 transition-all duration-1000 ease-in-out`}
           style={{
-            top: framework.top,
-            left: framework.left,
-            right: framework.right,
-            bottom: framework.bottom,
+            top: logo.top,
+            left: logo.left,
+            right: logo.right,
+            bottom: logo.bottom,
+            filter: 'drop-shadow(0 0 15px rgba(0, 255, 255, 0.3))',
+            animationDelay: `${index * 2}s`,
+            animationDuration: '8s'
           }}
         >
           <img 
-            src={framework.src} 
-            alt={framework.alt}
-            className={`${framework.size} opacity-15 hover:opacity-50 transition-all duration-500 hover:scale-110`}
-            loading="lazy"
+            src={logo.image} 
+            alt={logo.name}
+            className="w-full h-full object-contain transition-transform duration-1000 hover:scale-110 hover:rotate-12"
           />
         </div>
       ))}
 
+      {/* Geometric Shapes */}
       {geometricShapes.map((shape, index) => (
         <div
-          key={`geo-${index}`}
-          className={`floating-shape animate-rotate-slow ${shape.color} ${shape.size} opacity-15 hover:opacity-30 transition-all duration-300`}
+          key={`shape-${index}`}
+          className={`absolute ${shape.color} ${shape.size} animate-float-delayed transition-all duration-1000`}
           style={{
             top: shape.top,
             left: shape.left,
             right: shape.right,
             bottom: shape.bottom,
+            animationDelay: `${index * 1.5}s`,
+            animationDuration: '10s'
           }}
         >
-          {shape.shape === 'hexagon' && (
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-              <path d="M17.5 3.5L22 12l-4.5 8.5h-11L2 12l4.5-8.5h11z" />
-            </svg>
-          )}
-          {shape.shape === 'square' && (
-            <div className="w-full h-full bg-current transform rotate-45"></div>
-          )}
-          {shape.shape === 'triangle' && (
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-              <path d="M12 2L22 20H2L12 2z" />
-            </svg>
-          )}
-          {shape.shape === 'circle' && (
-            <div className="w-full h-full bg-current rounded-full"></div>
-          )}
+          {shape.shape}
         </div>
       ))}
     </div>

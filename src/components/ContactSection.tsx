@@ -1,6 +1,6 @@
 
 import { Card } from '@/components/ui/card';
-import { Mail, Phone, Github, Instagram, Twitter, MessageSquare } from 'lucide-react';
+import { Mail, Phone, Github, Instagram, MessageSquare, Linkedin } from 'lucide-react';
 
 const ContactSection = () => {
   const contactMethods = [
@@ -9,47 +9,59 @@ const ContactSection = () => {
       label: 'Email',
       value: 'Contact via Gmail',
       link: 'mailto:adilmunawar@gmail.com',
-      color: 'text-red-400 border-red-400'
+      color: 'text-red-400 border-red-400',
+      bgColor: 'bg-red-500/10',
+      image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=400&h=400&fit=crop&crop=center'
     },
     {
       Icon: Phone,
       label: 'WhatsApp',
       value: '+92 324 4965220',
       link: 'https://wa.me/923244965220',
-      color: 'text-green-400 border-green-400'
+      color: 'text-green-400 border-green-400',
+      bgColor: 'bg-green-500/10',
+      image: 'https://images.unsplash.com/photo-1611262588024-d12430b98920?w=400&h=400&fit=crop&crop=center'
     },
     {
       Icon: Instagram,
       label: 'Instagram',
       value: '@adilmunawarx',
       link: 'https://instagram.com/adilmunawarx',
-      color: 'text-pink-400 border-pink-400'
+      color: 'text-pink-400 border-pink-400',
+      bgColor: 'bg-pink-500/10',
+      image: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?w=400&h=400&fit=crop&crop=center'
     },
     {
       Icon: MessageSquare,
       label: 'Telegram',
       value: 'Telegram',
       link: 'https://t.me/adilmunawar',
-      color: 'text-blue-400 border-blue-400'
+      color: 'text-blue-400 border-blue-400',
+      bgColor: 'bg-blue-500/10',
+      image: 'https://images.unsplash.com/photo-1611605698549-8b6c2c1e7a27?w=400&h=400&fit=crop&crop=center'
     },
     {
-      Icon: Twitter,
+      Icon: Linkedin,
       label: 'LinkedIn',
       value: 'LinkedIn',
       link: 'https://linkedin.com/in/adilmunawar',
-      color: 'text-blue-400 border-blue-400'
+      color: 'text-blue-500 border-blue-500',
+      bgColor: 'bg-blue-600/10',
+      image: 'https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=400&h=400&fit=crop&crop=center'
     },
     {
       Icon: Github,
       label: 'GitHub',
       value: 'github.com/adilmunawar',
       link: 'https://github.com/adilmunawar',
-      color: 'text-white border-white'
+      color: 'text-white border-white',
+      bgColor: 'bg-gray-500/10',
+      image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=400&h=400&fit=crop&crop=center'
     },
   ];
 
   const footerSocials = [
-    { Icon: Twitter, link: 'https://twitter.com/AdilMunawarX' },
+    { Icon: Linkedin, link: 'https://linkedin.com/in/adilmunawar' },
     { Icon: Github, link: 'https://github.com/adilmunawar' },
     { Icon: Instagram, link: 'https://instagram.com/adilmunawarx' },
     { Icon: Phone, link: 'https://wa.me/923244965220' },
@@ -59,10 +71,10 @@ const ContactSection = () => {
     <section id="contact" className="min-h-screen py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient animate-fade-in-up">
             Contact
           </h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-gray-300 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Contact me by: <span className="text-cyber-cyan font-semibold">Social Media</span>
           </p>
         </div>
@@ -71,22 +83,36 @@ const ContactSection = () => {
           {contactMethods.map((method, index) => (
             <Card 
               key={index}
-              className="p-6 bg-cyber-gray/20 border-cyber-cyan/20 hover:border-cyber-cyan/50 transition-all duration-300 hover:scale-105 group cursor-pointer"
+              className={`p-0 bg-cyber-gray/20 border-cyber-cyan/20 hover:border-cyber-cyan/50 transition-all duration-500 hover:scale-105 group cursor-pointer overflow-hidden relative animate-scale-in glow-effect hover:shadow-2xl`}
+              style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => window.open(method.link, '_blank')}
             >
-              <div className="text-center">
-                <div className={`w-16 h-16 rounded-lg border-2 ${method.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <method.Icon size={32} />
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+                style={{ backgroundImage: `url(${method.image})` }}
+              />
+              
+              {/* Overlay */}
+              <div className={`absolute inset-0 ${method.bgColor} group-hover:opacity-80 transition-opacity duration-500`} />
+              
+              {/* Content */}
+              <div className="relative p-6 text-center">
+                <div className={`w-16 h-16 rounded-xl border-2 ${method.color} ${method.bgColor} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 backdrop-blur-sm shadow-lg`}>
+                  <method.Icon size={32} className="group-hover:drop-shadow-lg" />
                 </div>
-                <h3 className="font-semibold text-white mb-1">{method.label}</h3>
-                <p className="text-gray-300 text-sm">{method.value}</p>
+                <h3 className="font-semibold text-white mb-1 group-hover:text-cyber-cyan transition-colors duration-300">{method.label}</h3>
+                <p className="text-gray-300 text-sm group-hover:text-white transition-colors duration-300">{method.value}</p>
               </div>
+
+              {/* Animated Border */}
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-cyber-cyan/50 rounded-lg transition-all duration-500" />
             </Card>
           ))}
         </div>
 
         {/* Footer */}
-        <div className="border-t border-cyber-cyan/20 pt-8">
+        <div className="border-t border-cyber-cyan/20 pt-8 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p className="text-gray-300">
@@ -102,9 +128,10 @@ const ContactSection = () => {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-cyber-cyan/20 rounded-full flex items-center justify-center hover:bg-cyber-cyan hover:text-black transition-all duration-300 hover:scale-110"
+                  className="w-12 h-12 bg-cyber-cyan/20 rounded-full flex items-center justify-center hover:bg-cyber-cyan hover:text-black transition-all duration-500 hover:scale-125 hover:rotate-12 glow-effect backdrop-blur-sm"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <social.Icon size={18} />
+                  <social.Icon size={20} />
                 </a>
               ))}
             </div>
@@ -115,7 +142,7 @@ const ContactSection = () => {
         <div className="fixed bottom-8 right-8 z-50">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="w-12 h-12 bg-cyber-cyan text-black rounded-full flex items-center justify-center hover:bg-cyber-blue transition-all duration-300 hover:scale-110 glow-effect"
+            className="w-14 h-14 bg-cyber-cyan text-black rounded-full flex items-center justify-center hover:bg-cyber-blue transition-all duration-500 hover:scale-125 glow-effect text-xl font-bold backdrop-blur-sm shadow-xl animate-float"
           >
             ↑
           </button>
