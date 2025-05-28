@@ -3,21 +3,57 @@ import { Card } from '@/components/ui/card';
 
 const AboutSection = () => {
   const frontendSkills = [
-    { name: 'HTML5', icon: '🌐' },
-    { name: 'CSS3', icon: '🎨' },
-    { name: 'JavaScript', icon: '⚡' },
-    { name: 'TypeScript', icon: '📘' },
-    { name: 'React', icon: '⚛️' },
-    { name: 'Next.js', icon: '🚀' },
+    { 
+      name: 'HTML5', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' 
+    },
+    { 
+      name: 'CSS3', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' 
+    },
+    { 
+      name: 'JavaScript', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' 
+    },
+    { 
+      name: 'TypeScript', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' 
+    },
+    { 
+      name: 'React', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' 
+    },
+    { 
+      name: 'Next.js', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' 
+    },
   ];
 
   const backendSkills = [
-    { name: 'Node.js', icon: '🟢' },
-    { name: 'Python', icon: '🐍' },
-    { name: 'MongoDB', icon: '🍃' },
-    { name: 'PostgreSQL', icon: '🐘' },
-    { name: 'Firebase', icon: '🔥' },
-    { name: 'Express.js', icon: '🚂' },
+    { 
+      name: 'Node.js', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' 
+    },
+    { 
+      name: 'Python', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' 
+    },
+    { 
+      name: 'MongoDB', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' 
+    },
+    { 
+      name: 'PostgreSQL', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' 
+    },
+    { 
+      name: 'Firebase', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' 
+    },
+    { 
+      name: 'Express.js', 
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' 
+    },
   ];
 
   return (
@@ -60,7 +96,14 @@ const AboutSection = () => {
                 {frontendSkills.map((skill, index) => (
                   <Card key={index} className="p-4 bg-cyber-gray/20 border-cyber-cyan/20 hover:border-cyber-cyan/50 transition-all duration-300 hover:scale-105">
                     <div className="text-center">
-                      <div className="text-2xl mb-2">{skill.icon}</div>
+                      <div className="mb-2 flex justify-center">
+                        <img 
+                          src={skill.image} 
+                          alt={skill.name}
+                          className="w-8 h-8"
+                          loading="lazy"
+                        />
+                      </div>
                       <div className="text-sm font-medium">{skill.name}</div>
                     </div>
                   </Card>
@@ -74,7 +117,14 @@ const AboutSection = () => {
                 {backendSkills.map((skill, index) => (
                   <Card key={index} className="p-4 bg-cyber-gray/20 border-cyber-cyan/20 hover:border-cyber-cyan/50 transition-all duration-300 hover:scale-105">
                     <div className="text-center">
-                      <div className="text-2xl mb-2">{skill.icon}</div>
+                      <div className="mb-2 flex justify-center">
+                        <img 
+                          src={skill.image} 
+                          alt={skill.name}
+                          className="w-8 h-8"
+                          loading="lazy"
+                        />
+                      </div>
                       <div className="text-sm font-medium">{skill.name}</div>
                     </div>
                   </Card>

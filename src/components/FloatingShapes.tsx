@@ -7,7 +7,7 @@ const FloatingShapes = () => {
       top: '10%', 
       left: '10%', 
       animation: 'animate-float', 
-      size: 'w-10 h-10' 
+      size: 'w-16 h-16' 
     },
     { 
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
@@ -15,7 +15,7 @@ const FloatingShapes = () => {
       top: '20%', 
       right: '15%', 
       animation: 'animate-float-delayed', 
-      size: 'w-9 h-9' 
+      size: 'w-14 h-14' 
     },
     { 
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
@@ -23,7 +23,7 @@ const FloatingShapes = () => {
       top: '60%', 
       left: '5%', 
       animation: 'animate-float', 
-      size: 'w-8 h-8' 
+      size: 'w-12 h-12' 
     },
     { 
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg',
@@ -31,7 +31,7 @@ const FloatingShapes = () => {
       bottom: '20%', 
       right: '20%', 
       animation: 'animate-float-delayed', 
-      size: 'w-11 h-11' 
+      size: 'w-18 h-18' 
     },
     { 
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
@@ -39,7 +39,7 @@ const FloatingShapes = () => {
       top: '80%', 
       left: '80%', 
       animation: 'animate-float', 
-      size: 'w-10 h-10' 
+      size: 'w-16 h-16' 
     },
     { 
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
@@ -47,7 +47,7 @@ const FloatingShapes = () => {
       top: '40%', 
       right: '5%', 
       animation: 'animate-float-delayed', 
-      size: 'w-8 h-8' 
+      size: 'w-12 h-12' 
     },
     { 
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
@@ -55,7 +55,7 @@ const FloatingShapes = () => {
       top: '15%', 
       left: '70%', 
       animation: 'animate-float', 
-      size: 'w-9 h-9' 
+      size: 'w-14 h-14' 
     },
     { 
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
@@ -63,7 +63,7 @@ const FloatingShapes = () => {
       bottom: '30%', 
       left: '30%', 
       animation: 'animate-float-delayed', 
-      size: 'w-10 h-10' 
+      size: 'w-16 h-16' 
     },
     { 
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
@@ -71,7 +71,7 @@ const FloatingShapes = () => {
       top: '50%', 
       left: '85%', 
       animation: 'animate-float', 
-      size: 'w-8 h-8' 
+      size: 'w-12 h-12' 
     },
     { 
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
@@ -79,7 +79,7 @@ const FloatingShapes = () => {
       bottom: '10%', 
       right: '10%', 
       animation: 'animate-float-delayed', 
-      size: 'w-9 h-9' 
+      size: 'w-14 h-14' 
     },
     { 
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
@@ -87,7 +87,7 @@ const FloatingShapes = () => {
       top: '35%', 
       left: '15%', 
       animation: 'animate-float', 
-      size: 'w-8 h-8' 
+      size: 'w-12 h-12' 
     },
     { 
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
@@ -95,17 +95,53 @@ const FloatingShapes = () => {
       bottom: '40%', 
       right: '35%', 
       animation: 'animate-float-delayed', 
-      size: 'w-10 h-10' 
+      size: 'w-16 h-16' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+      alt: 'JavaScript',
+      top: '25%', 
+      left: '40%', 
+      animation: 'animate-float', 
+      size: 'w-13 h-13' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+      alt: 'HTML5',
+      bottom: '50%', 
+      left: '60%', 
+      animation: 'animate-float-delayed', 
+      size: 'w-14 h-14' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+      alt: 'CSS3',
+      top: '70%', 
+      right: '50%', 
+      animation: 'animate-float', 
+      size: 'w-12 h-12' 
+    },
+    { 
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+      alt: 'Firebase',
+      bottom: '60%', 
+      right: '60%', 
+      animation: 'animate-float-delayed', 
+      size: 'w-13 h-13' 
     }
   ];
 
   const geometricShapes = [
-    { shape: 'hexagon', top: '25%', right: '8%', color: 'text-green-400', size: 'w-6 h-6' },
-    { shape: 'square', top: '70%', left: '25%', color: 'text-yellow-400', size: 'w-5 h-5' },
-    { shape: 'triangle', bottom: '15%', left: '50%', color: 'text-purple-400', size: 'w-7 h-7' },
-    { shape: 'circle', top: '45%', right: '25%', color: 'text-blue-400', size: 'w-5 h-5' },
-    { shape: 'hexagon', bottom: '35%', left: '8%', color: 'text-pink-400', size: 'w-6 h-6' },
-    { shape: 'square', top: '5%', left: '45%', color: 'text-cyan-400', size: 'w-4 h-4' },
+    { shape: 'hexagon', top: '25%', right: '8%', color: 'text-green-400', size: 'w-8 h-8' },
+    { shape: 'square', top: '70%', left: '25%', color: 'text-yellow-400', size: 'w-7 h-7' },
+    { shape: 'triangle', bottom: '15%', left: '50%', color: 'text-purple-400', size: 'w-9 h-9' },
+    { shape: 'circle', top: '45%', right: '25%', color: 'text-blue-400', size: 'w-7 h-7' },
+    { shape: 'hexagon', bottom: '35%', left: '8%', color: 'text-pink-400', size: 'w-8 h-8' },
+    { shape: 'square', top: '5%', left: '45%', color: 'text-cyan-400', size: 'w-6 h-6' },
+    { shape: 'triangle', top: '85%', right: '30%', color: 'text-orange-400', size: 'w-8 h-8' },
+    { shape: 'circle', bottom: '25%', right: '70%', color: 'text-indigo-400', size: 'w-6 h-6' },
+    { shape: 'hexagon', top: '55%', left: '3%', color: 'text-red-400', size: 'w-7 h-7' },
+    { shape: 'square', bottom: '5%', left: '75%', color: 'text-teal-400', size: 'w-8 h-8' },
   ];
 
   return (
@@ -124,7 +160,7 @@ const FloatingShapes = () => {
           <img 
             src={framework.src} 
             alt={framework.alt}
-            className={`${framework.size} opacity-20 hover:opacity-40 transition-opacity duration-300`}
+            className={`${framework.size} opacity-15 hover:opacity-50 transition-all duration-500 hover:scale-110`}
             loading="lazy"
           />
         </div>
@@ -133,7 +169,7 @@ const FloatingShapes = () => {
       {geometricShapes.map((shape, index) => (
         <div
           key={`geo-${index}`}
-          className={`floating-shape animate-rotate-slow ${shape.color} ${shape.size} opacity-10`}
+          className={`floating-shape animate-rotate-slow ${shape.color} ${shape.size} opacity-15 hover:opacity-30 transition-all duration-300`}
           style={{
             top: shape.top,
             left: shape.left,
