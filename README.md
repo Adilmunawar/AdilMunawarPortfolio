@@ -6,10 +6,10 @@
 ![Portfolio Banner](https://github.com/Adilmunawar/AdilPortfolio/blob/main/public/Screenshot%202025-05-28%20213528.png)
 
 
-[![GitHub stars](https://img.shields.io/github/stars/adilmunawar/adilportfolio?style=social)](https://github.com/adilmunawar/adil-portfolio/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/adilmunawar/adilportfolio?style=social)](https://github.com/adilmunawar/adil-portfolio/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/adilmunawar/adilportfolio)](https://github.com/adilmunawar/adil-portfolio/issues)
-[![GitHub license](https://img.shields.io/github/license/adilmunawar/adilportfolio)](https://github.com/adilmunawar/adil-portfolio/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/adilmunawar/adilportfolio?style=social)](https://github.com/adilmunawar/adilportfolio/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/adilmunawar/adilportfolio?style=social)](https://github.com/adilmunawar/adilportfolio/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/adilmunawar/adilportfolio)](https://github.com/adilmunawar/adilportfolio/issues)
+[![GitHub license](https://img.shields.io/github/license/adilmunawar/adilportfolio)](https://github.com/adilmunawar/adilportfolio/blob/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 **A stunning, responsive portfolio website showcasing modern web development skills**
@@ -122,12 +122,12 @@ yarn --version
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/adilmunawar/adil-portfolio.git
+   git clone https://github.com/adilmunawar/adilportfolio.git
    ```
 
 2. **Navigate to project directory**
    ```bash
-   cd adil-portfolio
+   cd adilportfolio
    ```
 
 3. **Install dependencies**
@@ -191,7 +191,7 @@ npm run lighthouse   # Run Lighthouse performance audit
 ## 📁 Project Structure
 
 ```
-adil-portfolio/
+adilportfolio/
 │
 ├── 📂 src/                          # Source files
 │   ├── 🧩 components/               # Reusable UI components
@@ -324,13 +324,13 @@ Contributions are what make the open source community such an amazing place to l
 1. **🍴 Fork the Project**
    ```bash
    # Click the Fork button on GitHub or use GitHub CLI
-   gh repo fork adilmunawar/adil-portfolio
+   gh repo fork adilmunawar/adilportfolio
    ```
 
 2. **🔄 Clone your Fork**
    ```bash
-   git clone https://github.com/AdilMunawar/adil-portfolio.git
-   cd adil-portfolio
+   git clone https://github.com/AdilMunawar/adilportfolio.git
+   cd adilportfolio
    ```
 
 3. **🌿 Create your Feature Branch**
