@@ -6,10 +6,10 @@
 ![Portfolio Banner](https://github.com/Adilmunawar/AdilPortfolio/blob/main/public/Screenshot%202025-05-28%20213528.png)
 
 
-[![GitHub stars](https://img.shields.io/github/stars/adilmunawar/adil-portfolio?style=social)](https://github.com/adilmunawar/adil-portfolio/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/adilmunawar/adil-portfolio?style=social)](https://github.com/adilmunawar/adil-portfolio/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/adilmunawar/adil-portfolio)](https://github.com/adilmunawar/adil-portfolio/issues)
-[![GitHub license](https://img.shields.io/github/license/adilmunawar/adil-portfolio)](https://github.com/adilmunawar/adil-portfolio/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/adilmunawar/adilportfolio?style=social)](https://github.com/adilmunawar/adil-portfolio/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/adilmunawar/adilportfolio?style=social)](https://github.com/adilmunawar/adil-portfolio/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/adilmunawar/adilportfolio)](https://github.com/adilmunawar/adil-portfolio/issues)
+[![GitHub license](https://img.shields.io/github/license/adilmunawar/adilportfolio)](https://github.com/adilmunawar/adil-portfolio/blob/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 **A stunning, responsive portfolio website showcasing modern web development skills**
