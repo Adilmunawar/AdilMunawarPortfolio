@@ -117,78 +117,133 @@ const AboutSection = () => {
     }
   ];
 
-  const SkillCard = ({ skill, index }: { skill: any, index: number }) => (
-    <Card 
-      key={skill.name}
-      className={`relative p-6 bg-gradient-to-br from-cyber-gray/20 to-cyber-gray/40 border-cyber-cyan/30 hover:border-cyber-cyan/80 transition-all duration-500 hover:scale-105 group cursor-pointer overflow-hidden backdrop-blur-sm ${
-        isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'
-      }`}
-      style={{ 
-        animationDelay: `${index * 100}ms`,
-        animationFillMode: 'both'
-      }}
-    >
-      {/* Tech Glitter Effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Continuous glitter particles */}
-        <div className="absolute top-2 left-2 w-1 h-1 bg-cyber-cyan rounded-full animate-tech-glitter-1 opacity-80"></div>
-        <div className="absolute top-4 right-3 w-0.5 h-0.5 bg-cyber-blue rounded-full animate-tech-glitter-2 opacity-70"></div>
-        <div className="absolute bottom-3 left-4 w-1.5 h-1.5 bg-cyber-cyan rounded-full animate-tech-glitter-3 opacity-60"></div>
-        <div className="absolute bottom-2 right-2 w-0.5 h-0.5 bg-cyber-blue rounded-full animate-tech-glitter-4 opacity-90"></div>
-        <div className="absolute top-1/2 left-1 w-1 h-1 bg-cyber-cyan rounded-full animate-tech-glitter-5 opacity-75"></div>
-        <div className="absolute top-1/3 right-1 w-0.5 h-0.5 bg-cyber-blue rounded-full animate-tech-glitter-6 opacity-65"></div>
-        
-        {/* Circuit-like lines */}
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyber-cyan/30 to-transparent animate-circuit-flow"></div>
-        <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-l from-transparent via-cyber-blue/30 to-transparent animate-circuit-flow-reverse"></div>
-        <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-transparent via-cyber-cyan/30 to-transparent animate-circuit-flow-vertical"></div>
-        <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-t from-transparent via-cyber-blue/30 to-transparent animate-circuit-flow-vertical-reverse"></div>
-      </div>
+  const toolsSkills = [
+    {
+      name: 'GitHub',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+      description: 'Version control and collaboration'
+    },
+    {
+      name: 'VS Code',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
+      description: 'Code editor and IDE'
+    },
+    {
+      name: 'Git',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+      description: 'Distributed version control'
+    },
+    {
+      name: 'Docker',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+      description: 'Container platform'
+    },
+    {
+      name: 'Figma',
+      image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+      description: 'UI/UX design tool'
+    },
+    {
+      name: 'Postman',
+      image: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg',
+      description: 'API development environment'
+    },
+    {
+      name: 'Vercel',
+      image: 'https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg',
+      description: 'Frontend cloud platform'
+    },
+    {
+      name: 'Notion',
+      image: 'https://www.vectorlogo.zone/logos/notion/notion-icon.svg',
+      description: 'Productivity and organization'
+    }
+  ];
 
-      {/* Continuous glowing background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/10 via-cyber-blue/10 to-cyber-cyan/10 animate-gradient-x"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/5 via-transparent to-cyber-blue/5 opacity-50 group-hover:opacity-100 transition-opacity duration-500 animate-tech-pulse"></div>
-      
-      {/* Skill icon with continuous glow */}
-      <div className="relative z-10 text-center">
-        <div className="relative mb-4 flex justify-center">
-          <div className="relative w-16 h-16 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12">
-            <img 
-              src={skill.image} 
-              alt={skill.name} 
-              className="w-full h-full object-contain transition-all duration-500 group-hover:drop-shadow-[0_0_30px_rgba(0,255,255,0.9)] drop-shadow-[0_0_15px_rgba(0,255,255,0.4)]" 
-              loading="lazy" 
-            />
-            {/* Continuous orbiting effects */}
-            <div className="absolute -inset-3">
-              <div className="absolute -inset-2 animate-spin-slow opacity-60">
-                <div className="w-2 h-2 bg-cyber-cyan rounded-full absolute top-0 left-1/2 transform -translate-x-1/2 animate-pulse"></div>
-              </div>
-              <div className="absolute -inset-4 animate-spin-reverse opacity-40">
-                <div className="w-1.5 h-1.5 bg-cyber-blue rounded-full absolute bottom-0 right-0 animate-pulse"></div>
+  const AdvancedSkillCard = ({ skill, index }: { skill: any, index: number }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+      <Card 
+        key={skill.name}
+        className={`relative p-6 bg-gradient-to-br from-cyber-gray/20 to-cyber-gray/40 border border-cyber-cyan/30 transition-all duration-700 cursor-pointer overflow-hidden backdrop-blur-sm group ${
+          isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'
+        }`}
+        style={{ 
+          animationDelay: `${index * 100}ms`,
+          animationFillMode: 'both'
+        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* Continuous smooth glowing effect outside */}
+        <div className="absolute -inset-1 bg-gradient-to-r from-cyber-cyan/40 via-cyber-blue/40 to-cyber-cyan/40 rounded-lg blur-md opacity-60 animate-gradient-x"></div>
+        
+        {/* Enhanced glowing border animation */}
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-cyber-cyan/30 via-cyber-blue/30 to-cyber-cyan/30 rounded-lg blur-sm animate-pulse opacity-80"></div>
+        
+        {/* Main card content */}
+        <div className="relative z-10 bg-cyber-gray/30 rounded-lg p-4 border border-cyber-cyan/20 backdrop-blur-sm">
+          {/* Skill icon with advanced tilt animation on hover */}
+          <div className="relative mb-4 flex justify-center">
+            <div 
+              className={`relative w-16 h-16 transition-all duration-500 transform-gpu ${
+                isHovered ? 'scale-110 rotate-12 translate-y-1' : 'scale-100 rotate-0'
+              }`}
+              style={{
+                transformStyle: 'preserve-3d',
+                filter: isHovered ? 'drop-shadow(0 0 25px rgba(0,255,255,0.8)) brightness(1.2)' : 'drop-shadow(0 0 10px rgba(0,255,255,0.4))'
+              }}
+            >
+              <img 
+                src={skill.image} 
+                alt={skill.name} 
+                className="w-full h-full object-contain transition-all duration-500" 
+                loading="lazy" 
+              />
+              
+              {/* Advanced orbiting elements with physics-like motion */}
+              <div className="absolute -inset-4 pointer-events-none">
+                <div className={`absolute -inset-2 transition-all duration-700 ${isHovered ? 'animate-spin' : 'animate-spin-slow'}`}>
+                  <div className="w-1.5 h-1.5 bg-cyber-cyan rounded-full absolute top-0 left-1/2 transform -translate-x-1/2 shadow-[0_0_8px_rgba(0,255,255,0.8)]"></div>
+                </div>
+                <div className={`absolute -inset-3 transition-all duration-700 ${isHovered ? 'animate-spin-reverse' : 'animate-spin-slow-reverse'}`}>
+                  <div className="w-1 h-1 bg-cyber-blue rounded-full absolute bottom-0 right-0 shadow-[0_0_6px_rgba(0,128,255,0.8)]"></div>
+                </div>
               </div>
             </div>
           </div>
+          
+          {/* Skill name with enhanced typography */}
+          <h4 className={`text-lg font-bold mb-3 text-center transition-all duration-500 ${
+            isHovered ? 'text-cyber-cyan scale-105' : 'text-white'
+          }`}>
+            {skill.name}
+          </h4>
+          
+          {/* Skill description with fade effect */}
+          <p className={`text-xs text-center leading-relaxed transition-all duration-500 ${
+            isHovered ? 'text-gray-100 opacity-100' : 'text-gray-300 opacity-80'
+          }`}>
+            {skill.description}
+          </p>
         </div>
         
-        {/* Skill name with continuous glow */}
-        <h4 className="text-lg font-bold mb-3 transition-all duration-500 group-hover:text-cyber-cyan text-white drop-shadow-[0_0_10px_rgba(0,255,255,0.3)] group-hover:drop-shadow-[0_0_20px_rgba(0,255,255,0.8)]">
-          {skill.name}
-        </h4>
+        {/* Advanced corner accent with glow */}
+        <div className="absolute top-0 right-0 w-0 h-0 border-l-[15px] border-l-transparent border-t-[15px] border-t-cyber-cyan/50 transition-all duration-500 group-hover:border-t-cyber-cyan/80"></div>
         
-        {/* Skill description */}
-        <p className="text-xs text-gray-300 transition-all duration-500 group-hover:text-gray-100 leading-relaxed">
-          {skill.description}
-        </p>
-      </div>
-      
-      {/* Continuous border glow */}
-      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyber-cyan/20 via-cyber-blue/20 to-cyber-cyan/20 opacity-30 group-hover:opacity-70 transition-opacity duration-500 blur-sm animate-tech-pulse"></div>
-      
-      {/* Corner accent with glow */}
-      <div className="absolute top-0 right-0 w-0 h-0 border-l-[20px] border-l-transparent border-t-[20px] border-t-cyber-cyan/40 group-hover:border-t-cyber-cyan/80 transition-all duration-500 drop-shadow-[0_0_10px_rgba(0,255,255,0.5)]"></div>
-    </Card>
-  );
+        {/* Reactive light particles */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className={`absolute top-2 left-2 w-1 h-1 bg-cyber-cyan rounded-full transition-all duration-1000 ${
+            isHovered ? 'animate-ping' : 'animate-pulse'
+          }`}></div>
+          <div className={`absolute bottom-2 right-2 w-0.5 h-0.5 bg-cyber-blue rounded-full transition-all duration-1000 ${
+            isHovered ? 'animate-ping' : 'animate-pulse'
+          }`} style={{ animationDelay: '0.5s' }}></div>
+        </div>
+      </Card>
+    );
+  };
 
   return (
     <section id="about" className="min-h-screen py-20 px-4 relative overflow-hidden">
@@ -309,7 +364,7 @@ const AboutSection = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 lg:gap-6">
               {frontendSkills.map((skill, index) => (
-                <SkillCard key={skill.name} skill={skill} index={index} />
+                <AdvancedSkillCard key={skill.name} skill={skill} index={index} />
               ))}
             </div>
           </div>
@@ -326,7 +381,24 @@ const AboutSection = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 lg:gap-6">
               {backendSkills.map((skill, index) => (
-                <SkillCard key={skill.name} skill={skill} index={index} />
+                <AdvancedSkillCard key={skill.name} skill={skill} index={index} />
+              ))}
+            </div>
+          </div>
+
+          {/* Tools & Environment */}
+          <div>
+            <div className="flex items-center mb-10">
+              <div className="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent flex-1"></div>
+              <h3 className="text-2xl lg:text-3xl font-bold text-purple-400 mx-6 relative">
+                <span className="relative z-10">Tools & Environment</span>
+                <div className="absolute -inset-4 bg-purple-500/20 rounded-lg blur-md opacity-50"></div>
+              </h3>
+              <div className="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent flex-1"></div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-4 lg:gap-6">
+              {toolsSkills.map((skill, index) => (
+                <AdvancedSkillCard key={skill.name} skill={skill} index={index} />
               ))}
             </div>
           </div>
