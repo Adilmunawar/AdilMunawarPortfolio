@@ -110,7 +110,7 @@ const AboutSection = () => {
   const SkillCard = ({ skill, index }: { skill: any, index: number }) => (
     <Card 
       key={skill.name}
-      className={`relative p-8 bg-gradient-to-br from-cyber-gray/10 to-cyber-gray/30 border-cyber-cyan/20 hover:border-cyber-cyan/60 transition-all duration-700 hover:scale-105 group cursor-pointer overflow-hidden backdrop-blur-sm ${
+      className={`relative p-6 bg-gradient-to-br from-cyber-gray/20 to-cyber-gray/40 border-cyber-cyan/30 hover:border-cyber-cyan/80 transition-all duration-500 hover:scale-105 group cursor-pointer overflow-hidden backdrop-blur-sm ${
         isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'
       }`}
       style={{ 
@@ -118,47 +118,48 @@ const AboutSection = () => {
         animationFillMode: 'both'
       }}
     >
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/5 via-cyber-blue/5 to-cyber-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-gradient-x"></div>
+      {/* Continuous glowing background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/10 via-cyber-blue/10 to-cyber-cyan/10 animate-gradient-x"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/5 via-transparent to-cyber-blue/5 opacity-50 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-glow"></div>
       
-      {/* Skill icon with enhanced hover effects */}
+      {/* Skill icon with continuous glow */}
       <div className="relative z-10 text-center">
-        <div className="relative mb-6 flex justify-center">
-          <div className="relative w-20 h-20 transition-all duration-700 group-hover:scale-125 group-hover:rotate-12">
+        <div className="relative mb-4 flex justify-center">
+          <div className="relative w-16 h-16 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12">
             <img 
               src={skill.image} 
               alt={skill.name} 
-              className="w-full h-full object-contain transition-all duration-700 group-hover:drop-shadow-[0_0_25px_rgba(0,255,255,0.8)]" 
+              className="w-full h-full object-contain transition-all duration-500 group-hover:drop-shadow-[0_0_30px_rgba(0,255,255,0.9)] drop-shadow-[0_0_15px_rgba(0,255,255,0.4)]" 
               loading="lazy" 
             />
-            {/* Orbiting particles */}
-            <div className="absolute -inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <div className="absolute -inset-2 animate-spin-slow">
-                <div className="w-3 h-3 bg-cyber-cyan rounded-full absolute top-0 left-1/2 transform -translate-x-1/2"></div>
+            {/* Continuous orbiting effects */}
+            <div className="absolute -inset-3">
+              <div className="absolute -inset-2 animate-spin-slow opacity-60">
+                <div className="w-2 h-2 bg-cyber-cyan rounded-full absolute top-0 left-1/2 transform -translate-x-1/2 animate-pulse"></div>
               </div>
-              <div className="absolute -inset-6 animate-spin-reverse">
-                <div className="w-2 h-2 bg-cyber-blue rounded-full absolute bottom-0 right-0"></div>
+              <div className="absolute -inset-4 animate-spin-reverse opacity-40">
+                <div className="w-1.5 h-1.5 bg-cyber-blue rounded-full absolute bottom-0 right-0 animate-pulse"></div>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Skill name with enhanced glow effect */}
-        <h4 className="text-xl font-bold mb-4 transition-all duration-500 group-hover:text-cyber-cyan group-hover:text-shadow-glow text-white">
+        {/* Skill name with continuous glow */}
+        <h4 className="text-lg font-bold mb-3 transition-all duration-500 group-hover:text-cyber-cyan text-white drop-shadow-[0_0_10px_rgba(0,255,255,0.3)] group-hover:drop-shadow-[0_0_20px_rgba(0,255,255,0.8)]">
           {skill.name}
         </h4>
         
-        {/* Skill description with enhanced reveal animation */}
-        <p className="text-sm text-gray-300 transition-all duration-700 group-hover:text-gray-100 leading-relaxed">
+        {/* Skill description */}
+        <p className="text-xs text-gray-300 transition-all duration-500 group-hover:text-gray-100 leading-relaxed">
           {skill.description}
         </p>
       </div>
       
-      {/* Enhanced corner accent */}
-      <div className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-cyber-cyan/20 group-hover:border-t-cyber-cyan/60 transition-all duration-500"></div>
+      {/* Continuous border glow */}
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyber-cyan/20 via-cyber-blue/20 to-cyber-cyan/20 opacity-30 group-hover:opacity-70 transition-opacity duration-500 blur-sm animate-pulse-glow"></div>
       
-      {/* Glowing border effect */}
-      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyber-cyan/20 via-cyber-blue/20 to-cyber-cyan/20 opacity-0 group-hover:opacity-50 transition-opacity duration-500 blur-sm"></div>
+      {/* Corner accent with glow */}
+      <div className="absolute top-0 right-0 w-0 h-0 border-l-[20px] border-l-transparent border-t-[20px] border-t-cyber-cyan/40 group-hover:border-t-cyber-cyan/80 transition-all duration-500 drop-shadow-[0_0_10px_rgba(0,255,255,0.5)]"></div>
     </Card>
   );
 
@@ -166,7 +167,7 @@ const AboutSection = () => {
     <section id="about" className="min-h-screen py-20 px-4 relative overflow-hidden">
       <div id="about-section" className="max-w-7xl mx-auto relative z-10">
         {/* Advanced title with morphing text */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <h2 className={`text-5xl md:text-7xl font-bold mb-6 transition-all duration-1000 ${
             isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
           }`}>
@@ -183,26 +184,26 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Who I Am Section with Image */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
-          {/* Enhanced about content */}
-          <div className={`space-y-8 transition-all duration-1000 ${
+        {/* Who I Am Section with Image - Centered and Closer */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-20 max-w-6xl mx-auto">
+          {/* Enhanced about content - Left side */}
+          <div className={`flex-1 max-w-2xl space-y-6 transition-all duration-1000 ${
             isVisible ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-12'
           }`}>
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-cyber-cyan/20 via-cyber-blue/20 to-cyber-cyan/20 rounded-lg blur-lg opacity-30 animate-pulse-glow"></div>
-              <div className="relative bg-cyber-gray/20 backdrop-blur-sm p-8 rounded-lg border border-cyber-cyan/30">
-                <h3 className="text-3xl font-bold text-cyber-cyan mb-6 flex items-center">
+              <div className="relative bg-cyber-gray/20 backdrop-blur-sm p-6 rounded-lg border border-cyber-cyan/30">
+                <h3 className="text-2xl lg:text-3xl font-bold text-cyber-cyan mb-4 flex items-center">
                   <span className="w-2 h-2 bg-cyber-cyan rounded-full mr-4 animate-pulse"></span>
                   Who I Am
                 </h3>
-                <div className="space-y-6 text-gray-300 leading-relaxed">
-                  <p className="text-lg">
+                <div className="space-y-4 text-gray-300 leading-relaxed">
+                  <p className="text-base lg:text-lg">
                     <strong className="text-white bg-gradient-to-r from-cyber-cyan to-cyber-blue bg-clip-text text-transparent">
                       I am a passionate and results-driven developer
                     </strong> with extensive experience in frontend development, backend systems, and mobile/web app integration.
                   </p>
-                  <p className="text-lg">
+                  <p className="text-base lg:text-lg">
                     Over the years, I've built a strong presence in the tech space through my innovative projects, each crafted to solve real-world problems and push the boundaries of design and functionality.
                   </p>
                 </div>
@@ -210,11 +211,11 @@ const AboutSection = () => {
             </div>
 
             {/* Enhanced contact info with animated cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyber-cyan to-cyber-blue rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
-                <div className="relative bg-cyber-gray/40 p-6 rounded-lg border border-cyber-cyan/20">
-                  <p className="text-lg">
+                <div className="relative bg-cyber-gray/40 p-4 rounded-lg border border-cyber-cyan/20">
+                  <p className="text-sm lg:text-base">
                     <strong className="text-cyber-cyan">Phone:</strong> 
                     <span className="ml-2 text-white">+92 324 4965220</span>
                   </p>
@@ -223,8 +224,8 @@ const AboutSection = () => {
               
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyber-blue to-cyber-cyan rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
-                <div className="relative bg-cyber-gray/40 p-6 rounded-lg border border-cyber-cyan/20">
-                  <p className="text-lg">
+                <div className="relative bg-cyber-gray/40 p-4 rounded-lg border border-cyber-cyan/20">
+                  <p className="text-sm lg:text-base">
                     <strong className="text-cyber-cyan">Focus:</strong> 
                     <span className="ml-2 text-white">Full-Stack Development</span>
                   </p>
@@ -233,17 +234,17 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Professional Image with Glowing Circle */}
-          <div className={`flex justify-center lg:justify-end transition-all duration-1000 ${
+          {/* Professional Image with Glowing Circle - Right side, closer */}
+          <div className={`flex-shrink-0 transition-all duration-1000 ${
             isVisible ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform translate-x-12'
           }`}>
             <div className="relative">
               {/* Outer glowing rings */}
-              <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-cyber-cyan/30 via-cyber-blue/30 to-cyber-cyan/30 animate-spin-slow blur-lg"></div>
-              <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-cyber-blue/40 via-cyber-cyan/40 to-cyber-blue/40 animate-spin-reverse blur-md"></div>
+              <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-cyber-cyan/30 via-cyber-blue/30 to-cyber-cyan/30 animate-spin-slow blur-lg"></div>
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-cyber-blue/40 via-cyber-cyan/40 to-cyber-blue/40 animate-spin-reverse blur-md"></div>
               
               {/* Main image container */}
-              <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-cyber-cyan/50 shadow-[0_0_50px_rgba(0,255,255,0.5)]">
+              <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-cyber-cyan/50 shadow-[0_0_50px_rgba(0,255,255,0.5)]">
                 <img 
                   src="/lovable-uploads/eaf50e40-682a-4730-ac3c-407cf3e4896e.png" 
                   alt="Professional Portrait"
@@ -255,7 +256,7 @@ const AboutSection = () => {
               </div>
               
               {/* Floating particles */}
-              <div className="absolute -inset-12 pointer-events-none">
+              <div className="absolute -inset-8 pointer-events-none">
                 <div className="absolute top-0 left-1/4 w-2 h-2 bg-cyber-cyan rounded-full animate-float opacity-60"></div>
                 <div className="absolute bottom-1/4 right-0 w-1.5 h-1.5 bg-cyber-blue rounded-full animate-float-delayed opacity-50"></div>
                 <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-cyber-cyan rounded-full animate-pulse opacity-70"></div>
@@ -265,21 +266,21 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Skills sections moved below */}
-        <div className={`space-y-20 transition-all duration-1000 ${
+        {/* Skills sections */}
+        <div className={`space-y-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
         }`}>
           {/* Frontend Skills */}
           <div>
-            <div className="flex items-center mb-12">
+            <div className="flex items-center mb-10">
               <div className="h-px bg-gradient-to-r from-transparent via-cyber-cyan to-transparent flex-1"></div>
-              <h3 className="text-3xl font-bold text-cyber-cyan mx-8 relative">
+              <h3 className="text-2xl lg:text-3xl font-bold text-cyber-cyan mx-6 relative">
                 <span className="relative z-10">Frontend Technologies</span>
                 <div className="absolute -inset-4 bg-cyber-cyan/20 rounded-lg blur-md opacity-50"></div>
               </h3>
               <div className="h-px bg-gradient-to-r from-transparent via-cyber-cyan to-transparent flex-1"></div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 lg:gap-6">
               {frontendSkills.map((skill, index) => (
                 <SkillCard key={skill.name} skill={skill} index={index} />
               ))}
@@ -288,15 +289,15 @@ const AboutSection = () => {
 
           {/* Backend Skills */}
           <div>
-            <div className="flex items-center mb-12">
+            <div className="flex items-center mb-10">
               <div className="h-px bg-gradient-to-r from-transparent via-cyber-blue to-transparent flex-1"></div>
-              <h3 className="text-3xl font-bold text-cyber-blue mx-8 relative">
+              <h3 className="text-2xl lg:text-3xl font-bold text-cyber-blue mx-6 relative">
                 <span className="relative z-10">Backend Technologies</span>
                 <div className="absolute -inset-4 bg-cyber-blue/20 rounded-lg blur-md opacity-50"></div>
               </h3>
               <div className="h-px bg-gradient-to-r from-transparent via-cyber-blue to-transparent flex-1"></div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 lg:gap-6">
               {backendSkills.map((skill, index) => (
                 <SkillCard key={skill.name} skill={skill} index={index} />
               ))}
