@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,9 +23,12 @@ export default {
 				'18': '4.5rem',
 				'24': '6rem',
 				'26': '6.5rem',
+				'27': '6.75rem',
 				'28': '7rem',
+				'29': '7.25rem',
 				'30': '7.5rem',
 				'32': '8rem',
+				'34': '8.5rem',
 				'35': '8.75rem',
 				'36': '9rem',
 				'37': '9.25rem',
@@ -195,6 +197,145 @@ export default {
 					'55%': { transform: 'translate(-20px, 25px) rotate(-4deg)' },
 					'100%': { transform: 'translate(0, 0) rotate(0deg)' }
 				},
+				'tech-glitter-1': {
+					'0%, 100%': { opacity: '0', transform: 'scale(0) rotate(0deg)' },
+					'20%': { opacity: '1', transform: 'scale(1.5) rotate(180deg)' },
+					'40%': { opacity: '0.3', transform: 'scale(0.8) rotate(360deg)' },
+					'60%': { opacity: '0.8', transform: 'scale(1.2) rotate(540deg)' },
+					'80%': { opacity: '0.1', transform: 'scale(0.5) rotate(720deg)' }
+				},
+				'tech-glitter-2': {
+					'0%, 100%': { opacity: '0', transform: 'scale(0) translateX(0)' },
+					'25%': { opacity: '0.8', transform: 'scale(1.3) translateX(10px)' },
+					'50%': { opacity: '0.2', transform: 'scale(0.6) translateX(-5px)' },
+					'75%': { opacity: '0.9', transform: 'scale(1.1) translateX(15px)' }
+				},
+				'tech-glitter-3': {
+					'0%, 100%': { opacity: '0', transform: 'scale(0) translateY(0)' },
+					'30%': { opacity: '0.7', transform: 'scale(1.4) translateY(-8px)' },
+					'60%': { opacity: '0.3', transform: 'scale(0.9) translateY(12px)' },
+					'90%': { opacity: '0.6', transform: 'scale(1.1) translateY(-4px)' }
+				},
+				'tech-glitter-4': {
+					'0%, 100%': { opacity: '0', transform: 'scale(0) rotate(0deg) skew(0deg)' },
+					'15%': { opacity: '1', transform: 'scale(1.6) rotate(90deg) skew(10deg)' },
+					'45%': { opacity: '0.4', transform: 'scale(0.7) rotate(270deg) skew(-5deg)' },
+					'75%': { opacity: '0.8', transform: 'scale(1.3) rotate(450deg) skew(15deg)' }
+				},
+				'tech-glitter-5': {
+					'0%, 100%': { opacity: '0', transform: 'scale(0) translate(0, 0)' },
+					'35%': { opacity: '0.9', transform: 'scale(1.2) translate(8px, -6px)' },
+					'70%': { opacity: '0.2', transform: 'scale(0.8) translate(-10px, 8px)' }
+				},
+				'tech-glitter-6': {
+					'0%, 100%': { opacity: '0', transform: 'scale(0) rotateX(0deg)' },
+					'40%': { opacity: '0.7', transform: 'scale(1.5) rotateX(180deg)' },
+					'80%': { opacity: '0.3', transform: 'scale(0.9) rotateX(360deg)' }
+				},
+				'circuit-flow': {
+					'0%': { transform: 'translateX(-100%)', opacity: '0' },
+					'50%': { opacity: '1' },
+					'100%': { transform: 'translateX(100%)', opacity: '0' }
+				},
+				'circuit-flow-reverse': {
+					'0%': { transform: 'translateX(100%)', opacity: '0' },
+					'50%': { opacity: '1' },
+					'100%': { transform: 'translateX(-100%)', opacity: '0' }
+				},
+				'circuit-flow-vertical': {
+					'0%': { transform: 'translateY(-100%)', opacity: '0' },
+					'50%': { opacity: '1' },
+					'100%': { transform: 'translateY(100%)', opacity: '0' }
+				},
+				'circuit-flow-vertical-reverse': {
+					'0%': { transform: 'translateY(100%)', opacity: '0' },
+					'50%': { opacity: '1' },
+					'100%': { transform: 'translateY(-100%)', opacity: '0' }
+				},
+				'tech-pulse': {
+					'0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+					'25%': { opacity: '0.7', transform: 'scale(1.05)' },
+					'50%': { opacity: '0.5', transform: 'scale(0.95)' },
+					'75%': { opacity: '0.8', transform: 'scale(1.02)' }
+				},
+				'cursor-react-float': {
+					'0%': { transform: 'translate(0px, 0px) rotate(0deg)' },
+					'25%': { transform: 'translate(15px, -20px) rotate(5deg)' },
+					'50%': { transform: 'translate(-10px, -30px) rotate(-3deg)' },
+					'75%': { transform: 'translate(-20px, 15px) rotate(7deg)' },
+					'100%': { transform: 'translate(0px, 0px) rotate(0deg)' }
+				},
+				'cursor-react-float-2': {
+					'0%': { transform: 'translate(0px, 0px) rotate(0deg)' },
+					'30%': { transform: 'translate(-25px, 10px) rotate(-4deg)' },
+					'60%': { transform: 'translate(20px, -25px) rotate(6deg)' },
+					'100%': { transform: 'translate(0px, 0px) rotate(0deg)' }
+				},
+				'cursor-react-float-3': {
+					'0%': { transform: 'translate(0px, 0px) rotate(0deg)' },
+					'20%': { transform: 'translate(18px, 22px) rotate(8deg)' },
+					'70%': { transform: 'translate(-22px, -15px) rotate(-5deg)' },
+					'100%': { transform: 'translate(0px, 0px) rotate(0deg)' }
+				},
+				'cursor-react-float-4': {
+					'0%': { transform: 'translate(0px, 0px) rotate(0deg)' },
+					'40%': { transform: 'translate(-15px, -28px) rotate(-7deg)' },
+					'80%': { transform: 'translate(25px, 12px) rotate(4deg)' },
+					'100%': { transform: 'translate(0px, 0px) rotate(0deg)' }
+				},
+				'cursor-react-float-5': {
+					'0%': { transform: 'translate(0px, 0px) rotate(0deg)' },
+					'35%': { transform: 'translate(22px, -18px) rotate(9deg)' },
+					'75%': { transform: 'translate(-18px, 25px) rotate(-6deg)' },
+					'100%': { transform: 'translate(0px, 0px) rotate(0deg)' }
+				},
+				'cursor-react-float-6': {
+					'0%': { transform: 'translate(0px, 0px) rotate(0deg)' },
+					'50%': { transform: 'translate(-20px, -20px) rotate(-8deg)' },
+					'100%': { transform: 'translate(0px, 0px) rotate(0deg)' }
+				},
+				'collision-bounce-1': {
+					'0%': { transform: 'translate(0px, 0px) scale(1)' },
+					'15%': { transform: 'translate(25px, -15px) scale(1.1)' },
+					'30%': { transform: 'translate(-20px, 10px) scale(0.9)' },
+					'45%': { transform: 'translate(30px, 20px) scale(1.15)' },
+					'60%': { transform: 'translate(-15px, -25px) scale(0.85)' },
+					'75%': { transform: 'translate(20px, -10px) scale(1.05)' },
+					'90%': { transform: 'translate(-10px, 15px) scale(0.95)' },
+					'100%': { transform: 'translate(0px, 0px) scale(1)' }
+				},
+				'collision-bounce-2': {
+					'0%': { transform: 'translate(0px, 0px) scale(1)' },
+					'20%': { transform: 'translate(-30px, 20px) scale(1.2)' },
+					'40%': { transform: 'translate(15px, -25px) scale(0.8)' },
+					'60%': { transform: 'translate(-25px, -15px) scale(1.1)' },
+					'80%': { transform: 'translate(20px, 25px) scale(0.9)' },
+					'100%': { transform: 'translate(0px, 0px) scale(1)' }
+				},
+				'collision-bounce-3': {
+					'0%': { transform: 'translate(0px, 0px) scale(1)' },
+					'25%': { transform: 'translate(35px, 15px) scale(1.15)' },
+					'50%': { transform: 'translate(-20px, -30px) scale(0.85)' },
+					'75%': { transform: 'translate(25px, -20px) scale(1.08)' },
+					'100%': { transform: 'translate(0px, 0px) scale(1)' }
+				},
+				'collision-bounce-4': {
+					'0%': { transform: 'translate(0px, 0px) scale(1)' },
+					'30%': { transform: 'translate(-25px, -20px) scale(1.12)' },
+					'60%': { transform: 'translate(30px, 25px) scale(0.88)' },
+					'100%': { transform: 'translate(0px, 0px) scale(1)' }
+				},
+				'collision-bounce-5': {
+					'0%': { transform: 'translate(0px, 0px) scale(1)' },
+					'40%': { transform: 'translate(20px, -30px) scale(1.18)' },
+					'80%': { transform: 'translate(-25px, 15px) scale(0.82)' },
+					'100%': { transform: 'translate(0px, 0px) scale(1)' }
+				},
+				'collision-bounce-6': {
+					'0%': { transform: 'translate(0px, 0px) scale(1)' },
+					'50%': { transform: 'translate(-30px, 30px) scale(1.2)' },
+					'100%': { transform: 'translate(0px, 0px) scale(1)' }
+				},
 				'realistic-float-1': {
 					'0%': { transform: 'translate(0px, 0px) rotate(0deg)' },
 					'12%': { transform: 'translate(25px, -30px) rotate(8deg)' },
@@ -323,7 +464,30 @@ export default {
 				'shimmer': 'shimmer 3s ease-in-out infinite',
 				'progress-fill': 'progress-fill 2s ease-out forwards',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-				'gradient-x': 'gradient-x 3s ease infinite'
+				'gradient-x': 'gradient-x 3s ease infinite',
+				'tech-glitter-1': 'tech-glitter-1 3s ease-in-out infinite',
+				'tech-glitter-2': 'tech-glitter-2 2.5s ease-in-out infinite',
+				'tech-glitter-3': 'tech-glitter-3 3.5s ease-in-out infinite',
+				'tech-glitter-4': 'tech-glitter-4 2.8s ease-in-out infinite',
+				'tech-glitter-5': 'tech-glitter-5 3.2s ease-in-out infinite',
+				'tech-glitter-6': 'tech-glitter-6 2.7s ease-in-out infinite',
+				'circuit-flow': 'circuit-flow 4s linear infinite',
+				'circuit-flow-reverse': 'circuit-flow-reverse 4.5s linear infinite',
+				'circuit-flow-vertical': 'circuit-flow-vertical 3.8s linear infinite',
+				'circuit-flow-vertical-reverse': 'circuit-flow-vertical-reverse 4.2s linear infinite',
+				'tech-pulse': 'tech-pulse 3s ease-in-out infinite',
+				'cursor-react-float': 'cursor-react-float 20s ease-in-out infinite',
+				'cursor-react-float-2': 'cursor-react-float-2 25s ease-in-out infinite',
+				'cursor-react-float-3': 'cursor-react-float-3 22s ease-in-out infinite',
+				'cursor-react-float-4': 'cursor-react-float-4 28s ease-in-out infinite',
+				'cursor-react-float-5': 'cursor-react-float-5 24s ease-in-out infinite',
+				'cursor-react-float-6': 'cursor-react-float-6 26s ease-in-out infinite',
+				'collision-bounce-1': 'collision-bounce-1 18s ease-in-out infinite',
+				'collision-bounce-2': 'collision-bounce-2 20s ease-in-out infinite',
+				'collision-bounce-3': 'collision-bounce-3 22s ease-in-out infinite',
+				'collision-bounce-4': 'collision-bounce-4 19s ease-in-out infinite',
+				'collision-bounce-5': 'collision-bounce-5 21s ease-in-out infinite',
+				'collision-bounce-6': 'collision-bounce-6 23s ease-in-out infinite'
 			},
 			textShadow: {
 				'glow': '0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3)'

@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 const AboutSection = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const dynamicTexts = [
     "Passionate Developer",
@@ -34,6 +35,15 @@ const AboutSection = () => {
     if (section) observer.observe(section);
 
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   const frontendSkills = [
@@ -118,9 +128,26 @@ const AboutSection = () => {
         animationFillMode: 'both'
       }}
     >
+      {/* Tech Glitter Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Continuous glitter particles */}
+        <div className="absolute top-2 left-2 w-1 h-1 bg-cyber-cyan rounded-full animate-tech-glitter-1 opacity-80"></div>
+        <div className="absolute top-4 right-3 w-0.5 h-0.5 bg-cyber-blue rounded-full animate-tech-glitter-2 opacity-70"></div>
+        <div className="absolute bottom-3 left-4 w-1.5 h-1.5 bg-cyber-cyan rounded-full animate-tech-glitter-3 opacity-60"></div>
+        <div className="absolute bottom-2 right-2 w-0.5 h-0.5 bg-cyber-blue rounded-full animate-tech-glitter-4 opacity-90"></div>
+        <div className="absolute top-1/2 left-1 w-1 h-1 bg-cyber-cyan rounded-full animate-tech-glitter-5 opacity-75"></div>
+        <div className="absolute top-1/3 right-1 w-0.5 h-0.5 bg-cyber-blue rounded-full animate-tech-glitter-6 opacity-65"></div>
+        
+        {/* Circuit-like lines */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyber-cyan/30 to-transparent animate-circuit-flow"></div>
+        <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-l from-transparent via-cyber-blue/30 to-transparent animate-circuit-flow-reverse"></div>
+        <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-transparent via-cyber-cyan/30 to-transparent animate-circuit-flow-vertical"></div>
+        <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-t from-transparent via-cyber-blue/30 to-transparent animate-circuit-flow-vertical-reverse"></div>
+      </div>
+
       {/* Continuous glowing background */}
       <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/10 via-cyber-blue/10 to-cyber-cyan/10 animate-gradient-x"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/5 via-transparent to-cyber-blue/5 opacity-50 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-glow"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-cyber-cyan/5 via-transparent to-cyber-blue/5 opacity-50 group-hover:opacity-100 transition-opacity duration-500 animate-tech-pulse"></div>
       
       {/* Skill icon with continuous glow */}
       <div className="relative z-10 text-center">
@@ -156,7 +183,7 @@ const AboutSection = () => {
       </div>
       
       {/* Continuous border glow */}
-      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyber-cyan/20 via-cyber-blue/20 to-cyber-cyan/20 opacity-30 group-hover:opacity-70 transition-opacity duration-500 blur-sm animate-pulse-glow"></div>
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyber-cyan/20 via-cyber-blue/20 to-cyber-cyan/20 opacity-30 group-hover:opacity-70 transition-opacity duration-500 blur-sm animate-tech-pulse"></div>
       
       {/* Corner accent with glow */}
       <div className="absolute top-0 right-0 w-0 h-0 border-l-[20px] border-l-transparent border-t-[20px] border-t-cyber-cyan/40 group-hover:border-t-cyber-cyan/80 transition-all duration-500 drop-shadow-[0_0_10px_rgba(0,255,255,0.5)]"></div>
@@ -191,7 +218,7 @@ const AboutSection = () => {
             isVisible ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-12'
           }`}>
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyber-cyan/20 via-cyber-blue/20 to-cyber-cyan/20 rounded-lg blur-lg opacity-30 animate-pulse-glow"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-cyber-cyan/20 via-cyber-blue/20 to-cyber-cyan/20 rounded-lg blur-lg opacity-30 animate-tech-pulse"></div>
               <div className="relative bg-cyber-gray/20 backdrop-blur-sm p-6 rounded-lg border border-cyber-cyan/30">
                 <h3 className="text-2xl lg:text-3xl font-bold text-cyber-cyan mb-4 flex items-center">
                   <span className="w-2 h-2 bg-cyber-cyan rounded-full mr-4 animate-pulse"></span>
