@@ -225,27 +225,27 @@ const FloatingShapes = () => {
   ];
 
   const geometricShapes = [
-    { shape: '◇', top: '18%', left: '30%', color: 'text-cyber-cyan/20', size: 'text-xl', animation: 'animate-drift-1' },
-    { shape: '○', bottom: '28%', right: '50%', color: 'text-cyber-blue/15', size: 'text-2xl', animation: 'animate-drift-2' },
-    { shape: '△', top: '75%', left: '45%', color: 'text-cyber-cyan/18', size: 'text-lg', animation: 'animate-drift-3' },
-    { shape: '□', top: '32%', right: '60%', color: 'text-cyber-blue/20', size: 'text-xl', animation: 'animate-drift-1' },
-    { shape: '◯', bottom: '65%', left: '55%', color: 'text-cyber-cyan/15', size: 'text-2xl', animation: 'animate-drift-2' },
-    { shape: '◈', top: '88%', right: '40%', color: 'text-cyber-blue/18', size: 'text-lg', animation: 'animate-drift-3' }
+    { shape: '◇', top: '18%', left: '30%', color: 'text-cyber-cyan/30', size: 'text-xl', animation: 'animate-drift-1' },
+    { shape: '○', bottom: '28%', right: '50%', color: 'text-cyber-blue/25', size: 'text-2xl', animation: 'animate-drift-2' },
+    { shape: '△', top: '75%', left: '45%', color: 'text-cyber-cyan/28', size: 'text-lg', animation: 'animate-drift-3' },
+    { shape: '□', top: '32%', right: '60%', color: 'text-cyber-blue/30', size: 'text-xl', animation: 'animate-drift-1' },
+    { shape: '◯', bottom: '65%', left: '55%', color: 'text-cyber-cyan/25', size: 'text-2xl', animation: 'animate-drift-2' },
+    { shape: '◈', top: '88%', right: '40%', color: 'text-cyber-blue/28', size: 'text-lg', animation: 'animate-drift-3' }
   ];
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      {/* Development Elements - Smaller and well-spaced */}
+      {/* Development Elements - Bigger and more visible */}
       {developmentElements.map((element, index) => (
         <div
           key={`dev-${index}`}
-          className={`absolute w-8 h-8 ${element.animation} opacity-15 transition-all duration-300 ease-in-out transform-gpu will-change-transform`}
+          className={`absolute w-12 h-12 ${element.animation} opacity-25 transition-all duration-300 ease-in-out transform-gpu will-change-transform`}
           style={{
             top: element.top,
             left: element.left,
             right: element.right,
             bottom: element.bottom,
-            filter: `drop-shadow(0 0 6px rgba(0, 255, 255, 0.15))`,
+            filter: `drop-shadow(0 0 8px rgba(0, 255, 255, 0.25)) brightness(1.1) contrast(1.1)`,
             animationDelay: `${index * 0.6}s`,
             animationDuration: `${18 + (index % 8)}s`
           }}
@@ -255,22 +255,22 @@ const FloatingShapes = () => {
             alt={element.name}
             className="w-full h-full object-contain transition-all duration-300"
             style={{
-              filter: 'contrast(1.1) brightness(0.85) saturate(0.9)'
+              filter: 'contrast(1.2) brightness(1.1) saturate(1.1)'
             }}
           />
           
-          {/* Subtle ring with tilt animation */}
+          {/* Enhanced ring with tilt animation */}
           <div 
-            className="absolute inset-0 rounded-full border border-cyber-cyan/5 animate-rotate-slow"
+            className="absolute inset-0 rounded-full border border-cyber-cyan/10 animate-rotate-slow"
             style={{
-              transform: 'scale(1.3)',
+              transform: 'scale(1.4)',
               animationDelay: `${index * 0.4}s`
             }}
           ></div>
         </div>
       ))}
 
-      {/* Geometric Shapes - With tilt animation */}
+      {/* Geometric Shapes - More visible */}
       {geometricShapes.map((shape, index) => (
         <div
           key={`shape-${index}`}
@@ -282,17 +282,18 @@ const FloatingShapes = () => {
             bottom: shape.bottom,
             animationDelay: `${index * 1.2}s`,
             animationDuration: `${15 + (index % 4)}s`,
-            textShadow: '0 0 8px currentColor'
+            textShadow: '0 0 12px currentColor',
+            filter: 'brightness(1.2)'
           }}
         >
           {shape.shape}
         </div>
       ))}
       
-      {/* Ambient light effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-cyber-cyan/3 via-cyber-cyan/1 to-transparent rounded-full blur-3xl opacity-25"></div>
-      <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-gradient-radial from-cyber-blue/3 via-cyber-blue/1 to-transparent rounded-full blur-3xl opacity-20"></div>
-      <div className="absolute top-2/3 left-1/2 w-64 h-64 bg-gradient-radial from-cyber-cyan/2 via-cyber-cyan/1 to-transparent rounded-full blur-3xl opacity-15"></div>
+      {/* Enhanced ambient light effects */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-cyber-cyan/4 via-cyber-cyan/2 to-transparent rounded-full blur-3xl opacity-30"></div>
+      <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-gradient-radial from-cyber-blue/4 via-cyber-blue/2 to-transparent rounded-full blur-3xl opacity-25"></div>
+      <div className="absolute top-2/3 left-1/2 w-64 h-64 bg-gradient-radial from-cyber-cyan/3 via-cyber-cyan/2 to-transparent rounded-full blur-3xl opacity-20"></div>
     </div>
   );
 };
