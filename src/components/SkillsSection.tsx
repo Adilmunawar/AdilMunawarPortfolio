@@ -42,7 +42,7 @@ const SkillsSection = () => {
         { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
         { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
         { name: "Express", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-        { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+        { name: "SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" },
         { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
         { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
         { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
@@ -59,7 +59,7 @@ const SkillsSection = () => {
         { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
         { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
         { name: "Webpack", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" },
-        { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+        { name: "Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
         { name: "Vercel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" }
       ]
     }
@@ -96,14 +96,14 @@ const SkillsSection = () => {
             >
               {/* Category Card */}
               <div className="relative group">
-                {/* Animated background gradient */}
-                <div className={`absolute -inset-1 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500`}></div>
+                {/* Continuous glow effect */}
+                <div className={`absolute -inset-1 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-30 animate-pulse`}></div>
                 
                 {/* Main card */}
-                <div className="relative bg-cyber-gray/30 backdrop-blur-lg rounded-2xl border border-white/10 p-6 hover:border-white/20 transition-all duration-500">
+                <div className="relative bg-cyber-gray/40 backdrop-blur-xl rounded-2xl border border-white/20 p-8 hover:border-white/40 transition-all duration-500">
                   {/* Category header */}
-                  <div className="mb-6">
-                    <h3 className={`text-2xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent mb-2`}>
+                  <div className="mb-8">
+                    <h3 className={`text-2xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent mb-3`}>
                       {category.title}
                     </h3>
                     <div className={`h-1 w-16 bg-gradient-to-r ${category.color} rounded-full`}></div>
@@ -114,13 +114,13 @@ const SkillsSection = () => {
                     {category.skills.map((skill, skillIndex) => (
                       <div
                         key={skill.name}
-                        className="group/skill relative flex flex-col items-center p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                        className="group/skill relative flex flex-col items-center p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300 cursor-pointer"
                         style={{ 
                           animationDelay: `${skillIndex * 100}ms`
                         }}
                       >
                         {/* Skill icon */}
-                        <div className="relative w-10 h-10 mb-2 transition-all duration-300 group-hover/skill:scale-110 group-hover/skill:rotate-6">
+                        <div className="relative w-12 h-12 mb-3 transition-all duration-300 group-hover/skill:scale-110 group-hover/skill:rotate-12">
                           <img 
                             src={skill.icon} 
                             alt={skill.name}

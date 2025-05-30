@@ -193,6 +193,11 @@ export default {
           "0%, 100%": { transform: "translate(0, 0) rotate(0deg) scale(1)" },
           "40%": { transform: "translate(-20px, -14px) rotate(-7deg) scale(1.05)" },
           "80%": { transform: "translate(10px, 22px) rotate(3deg) scale(0.95)" }
+        },
+        "subtle-tilt": {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(1deg)" },
+          "75%": { transform: "rotate(-1deg)" }
         }
       },
       animation: {
@@ -223,7 +228,8 @@ export default {
         "float-tech-3": "float-tech-3 20s ease-in-out infinite",
         "float-tech-4": "float-tech-4 14s ease-in-out infinite",
         "float-tech-5": "float-tech-5 17s ease-in-out infinite",
-        "float-tech-6": "float-tech-6 19s ease-in-out infinite"
+        "float-tech-6": "float-tech-6 19s ease-in-out infinite",
+        "subtle-tilt": "subtle-tilt 4s ease-in-out infinite"
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
