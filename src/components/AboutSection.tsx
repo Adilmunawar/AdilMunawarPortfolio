@@ -57,7 +57,7 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Who I Am Section with Image - Centered and Closer */}
+        {/* Who I am Section with Image - Centered and Closer */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-20 max-w-6xl mx-auto">
           {/* Enhanced about content - Left side */}
           <div className={`flex-1 max-w-2xl space-y-6 transition-all duration-1000 ${
@@ -68,7 +68,7 @@ const AboutSection = () => {
               <div className="relative bg-cyber-gray/20 backdrop-blur-sm p-6 rounded-lg border border-cyber-cyan/30">
                 <h3 className="text-2xl lg:text-3xl font-bold text-cyber-cyan mb-4 flex items-center">
                   <span className="w-2 h-2 bg-cyber-cyan rounded-full mr-4 animate-pulse"></span>
-                  Who I Am
+                  Who I am
                 </h3>
                 <div className="space-y-4 text-gray-300 leading-relaxed">
                   <p className="text-base lg:text-lg">
@@ -140,11 +140,11 @@ const AboutSection = () => {
         </div>
       </div>
       
-      {/* Animated background elements */}
+      {/* Optimized background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyber-cyan/5 rounded-full blur-3xl animate-drift-1"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyber-blue/5 rounded-full blur-3xl animate-drift-2"></div>
-        <div className="absolute top-3/4 left-1/2 w-72 h-72 bg-cyber-cyan/3 rounded-full blur-3xl animate-drift-3"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyber-cyan/3 rounded-full blur-3xl animate-drift-1"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyber-blue/3 rounded-full blur-3xl animate-drift-2"></div>
+        <div className="absolute top-3/4 left-1/2 w-72 h-72 bg-cyber-cyan/2 rounded-full blur-3xl animate-drift-3"></div>
       </div>
     </section>
   );
