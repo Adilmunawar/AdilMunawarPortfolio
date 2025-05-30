@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import GitHubStats from './GitHubStats';
 
 const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -82,7 +83,14 @@ const SkillsSection = () => {
           </p>
         </div>
 
-        {/* Skills Categories */}
+        {/* GitHub Stats */}
+        <div className={`mb-16 transition-all duration-1000 delay-200 ${
+          isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
+        }`}>
+          <GitHubStats />
+        </div>
+
+        {/* Skills Categories - Fixed heights */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div
@@ -94,13 +102,13 @@ const SkillsSection = () => {
               }`}
               style={{ transitionDelay: `${(categoryIndex + 1) * 200}ms` }}
             >
-              {/* Category Card */}
-              <div className="relative group">
+              {/* Category Card - Fixed height */}
+              <div className="relative group h-[600px]">
                 {/* Continuous glow effect */}
                 <div className={`absolute -inset-1 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-30 animate-pulse`}></div>
                 
                 {/* Main card */}
-                <div className="relative bg-cyber-gray/40 backdrop-blur-xl rounded-2xl border border-white/20 p-8 hover:border-white/40 transition-all duration-500">
+                <div className="relative bg-cyber-gray/40 backdrop-blur-xl rounded-2xl border border-white/20 p-8 hover:border-white/40 transition-all duration-500 h-full flex flex-col">
                   {/* Category header */}
                   <div className="mb-8">
                     <h3 className={`text-2xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent mb-3`}>
@@ -109,8 +117,8 @@ const SkillsSection = () => {
                     <div className={`h-1 w-16 bg-gradient-to-r ${category.color} rounded-full`}></div>
                   </div>
 
-                  {/* Skills grid */}
-                  <div className="grid grid-cols-4 gap-4">
+                  {/* Skills grid - Flex grow to fill remaining space */}
+                  <div className="grid grid-cols-4 gap-4 flex-grow content-start">
                     {category.skills.map((skill, skillIndex) => (
                       <div
                         key={skill.name}
