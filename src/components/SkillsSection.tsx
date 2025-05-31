@@ -90,7 +90,7 @@ const SkillsSection = () => {
           <GitHubStats />
         </div>
 
-        {/* Skills Categories - Optimized height */}
+        {/* Skills Categories */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div
@@ -102,13 +102,13 @@ const SkillsSection = () => {
               }`}
               style={{ transitionDelay: `${(categoryIndex + 1) * 200}ms` }}
             >
-              {/* Category Card - Optimized height */}
-              <div className="relative group h-[320px]">
+              {/* Category Card with hover tilt effect */}
+              <div className="relative group h-[280px] animate-subtle-tilt hover:animate-none">
                 {/* Slower, smoother glow effect */}
-                <div className={`absolute -inset-1 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-1000 ease-in-out`}></div>
+                <div className={`absolute -inset-1 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-10 group-hover:opacity-20 transition-all duration-[2000ms] ease-in-out`}></div>
                 
                 {/* Main card */}
-                <div className="relative bg-cyber-gray/30 backdrop-blur-xl rounded-2xl border border-white/10 p-5 hover:border-white/30 transition-all duration-700 h-full flex flex-col group-hover:transform group-hover:scale-[1.01]">
+                <div className="relative bg-cyber-gray/30 backdrop-blur-xl rounded-2xl border border-white/10 p-5 hover:border-white/30 transition-all duration-700 h-full flex flex-col group-hover:transform group-hover:scale-[1.01] group-hover:rotate-1">
                   {/* Category header */}
                   <div className="mb-5">
                     <h3 className={`text-xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent mb-2`}>
@@ -117,12 +117,12 @@ const SkillsSection = () => {
                     <div className={`h-0.5 w-12 bg-gradient-to-r ${category.color} rounded-full group-hover:w-20 transition-all duration-500`}></div>
                   </div>
 
-                  {/* Skills grid - Compact layout */}
+                  {/* Skills grid */}
                   <div className="grid grid-cols-4 gap-2.5 flex-grow content-start">
                     {category.skills.map((skill, skillIndex) => (
                       <div
                         key={skill.name}
-                        className="group/skill relative flex flex-col items-center p-2.5 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-500 cursor-pointer will-change-transform"
+                        className="group/skill relative flex flex-col items-center p-2.5 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-500 cursor-pointer will-change-transform hover:rotate-2"
                         style={{ 
                           animationDelay: `${skillIndex * 100}ms`
                         }}

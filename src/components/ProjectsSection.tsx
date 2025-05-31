@@ -9,11 +9,11 @@ const ProjectsSection = () => {
       title: 'Aditron',
       description: 'A futuristic social media and corporate chat platform that redefines user engagement through secure, email-based access and smooth global interaction.',
       technologies: ['React', 'Node.js', 'Socket.io', 'SQL', 'Express'],
-      image: '/api/placeholder/400/250',
-      liveUrl: '#',
-      githubUrl: '#',
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=3543&auto=format&fit=crop',
+      liveUrl: 'https://aditron.vercel.app',
+      githubUrl: 'https://github.com/adilmunawar/aditron',
       featured: true,
-      status: 'Live',
+      status: 'Paused',
       stats: { stars: 156, forks: 42 },
       gradient: 'from-blue-500 to-purple-500'
     },
@@ -21,9 +21,9 @@ const ProjectsSection = () => {
       title: 'AdiNox',
       description: 'A WebView-based Android app built for adinox.vercel.app, featuring camera integration, custom splash screen, and sleek UI aligned with brand palette.',
       technologies: ['React Native', 'WebView', 'Android SDK', 'JavaScript'],
-      image: '/api/placeholder/400/250',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=3882&auto=format&fit=crop',
       liveUrl: 'https://adinox.vercel.app',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/adilmunawar/adinox',
       featured: false,
       status: 'Live',
       stats: { stars: 89, forks: 23 },
@@ -33,9 +33,9 @@ const ProjectsSection = () => {
       title: 'AdiCorp',
       description: 'A powerful corporate employee management web app focused on automation of attendance, salary, leave management, and live admin dashboards in sleek dark mode.',
       technologies: ['React', 'TypeScript', 'Supabase', 'Node.js', 'Chart.js'],
-      image: '/api/placeholder/400/250',
-      liveUrl: '#',
-      githubUrl: '#',
+      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=5760&auto=format&fit=crop',
+      liveUrl: 'https://adicorp.vercel.app',
+      githubUrl: 'https://github.com/adilmunawar/adicorp',
       featured: true,
       status: 'Development',
       stats: { stars: 234, forks: 67 },
@@ -75,9 +75,16 @@ const ProjectsSection = () => {
               <div className="grid lg:grid-cols-2 gap-0 relative">
                 {/* Enhanced Project Visual */}
                 <div className="relative aspect-video lg:aspect-auto bg-gradient-to-br from-cyber-cyan/20 to-cyber-blue/20 flex items-center justify-center overflow-hidden">
+                  {/* Project Image */}
+                  <img 
+                    src={project.image}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 filter brightness-75 group-hover:brightness-90"
+                  />
+                  
                   {/* Multiple animated background layers */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-10 animate-pulse`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-cyber-dark/60 to-transparent"></div>
+                  <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-20 group-hover:opacity-30 transition-all duration-1000`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-cyber-dark/80 to-transparent"></div>
                   
                   {/* Enhanced floating elements */}
                   <div className="absolute top-4 left-4 w-3 h-3 bg-cyber-cyan rounded-full animate-ping"></div>
@@ -93,11 +100,15 @@ const ProjectsSection = () => {
                     {/* Enhanced status badge */}
                     <div className={`inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm border shadow-lg ${
                       project.status === 'Live' 
-                        ? 'bg-green-500/20 text-green-300 border-green-500/40 shadow-green-500/20' 
+                        ? 'bg-green-500/20 text-green-300 border-green-500/40 shadow-green-500/20'
+                        : project.status === 'Paused'
+                        ? 'bg-yellow-500/20 text-yellow-300 border-yellow-500/40 shadow-yellow-500/20' 
                         : 'bg-orange-500/20 text-orange-300 border-orange-500/40 shadow-orange-500/20'
                     } group-hover:scale-105 transition-all duration-500`}>
                       <div className={`w-2 h-2 rounded-full ${
-                        project.status === 'Live' ? 'bg-green-400 animate-pulse' : 'bg-orange-400 animate-bounce'
+                        project.status === 'Live' ? 'bg-green-400 animate-pulse' 
+                        : project.status === 'Paused' ? 'bg-yellow-400 animate-pulse'
+                        : 'bg-orange-400 animate-bounce'
                       }`}></div>
                       {project.status}
                     </div>
