@@ -12,10 +12,10 @@ const GitHubStats = () => {
   const [contributions, setContributions] = useState<ContributionDay[]>([]);
   const [totalContributions, setTotalContributions] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [animateStats, setAnimateStats] = useState(false);
 
   useEffect(() => {
     // Generate mock data since GitHub API requires authentication
-    // In a real implementation, you'd use GitHub GraphQL API with authentication
     const generateMockData = () => {
       const data: ContributionDay[] = [];
       const today = new Date();
@@ -23,7 +23,7 @@ const GitHubStats = () => {
       
       let total = 0;
       for (let d = new Date(oneYearAgo); d <= today; d.setDate(d.getDate() + 1)) {
-        const count = Math.floor(Math.random() * 15); // Random contributions 0-14
+        const count = Math.floor(Math.random() * 15);
         const level = count === 0 ? 0 : count <= 3 ? 1 : count <= 6 ? 2 : count <= 9 ? 3 : 4;
         
         data.push({
@@ -37,6 +37,9 @@ const GitHubStats = () => {
       setContributions(data);
       setTotalContributions(total);
       setIsLoading(false);
+      
+      // Trigger animation after data loads
+      setTimeout(() => setAnimateStats(true), 100);
     };
 
     generateMockData();
@@ -44,12 +47,12 @@ const GitHubStats = () => {
 
   const getLevelColor = (level: number) => {
     switch (level) {
-      case 0: return 'bg-gray-800';
-      case 1: return 'bg-emerald-900';
+      case 0: return 'bg-gray-800/60';
+      case 1: return 'bg-emerald-900/80';
       case 2: return 'bg-emerald-700';
       case 3: return 'bg-emerald-500';
       case 4: return 'bg-emerald-300';
-      default: return 'bg-gray-800';
+      default: return 'bg-gray-800/60';
     }
   };
 
@@ -77,12 +80,18 @@ const GitHubStats = () => {
 
   if (isLoading) {
     return (
-      <Card className="p-6 bg-cyber-gray/20 border-cyber-cyan/30 backdrop-blur-xl">
-        <div className="animate-pulse">
-          <div className="h-4 bg-gray-700 rounded w-1/3 mb-4"></div>
+      <Card className="p-8 bg-cyber-gray/20 border-cyber-cyan/30 backdrop-blur-xl relative overflow-hidden">
+        {/* Advanced loading animation */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyber-cyan/10 to-transparent animate-pulse"></div>
+        <div className="animate-pulse relative z-10">
+          <div className="h-6 bg-gradient-to-r from-gray-700 to-gray-600 rounded w-1/3 mb-6 animate-shimmer"></div>
           <div className="grid grid-cols-52 gap-1">
             {Array.from({ length: 365 }).map((_, i) => (
-              <div key={i} className="w-3 h-3 bg-gray-800 rounded-sm"></div>
+              <div 
+                key={i} 
+                className="w-3 h-3 bg-gray-800/40 rounded-sm animate-pulse" 
+                style={{ animationDelay: `${i * 2}ms` }}
+              ></div>
             ))}
           </div>
         </div>
@@ -91,32 +100,61 @@ const GitHubStats = () => {
   }
 
   return (
-    <Card className="p-6 bg-cyber-gray/20 border-cyber-cyan/30 backdrop-blur-xl hover:border-cyber-cyan/60 transition-all duration-500 group overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+    <Card className="p-8 bg-cyber-gray/20 border-cyber-cyan/30 backdrop-blur-xl hover:border-cyber-cyan/60 transition-all duration-500 group overflow-hidden relative">
+      {/* Advanced background effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-cyan-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-left"></div>
+      
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(5)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-cyber-cyan rounded-full animate-float opacity-30"
+            style={{
+              left: `${20 + i * 20}%`,
+              top: `${30 + i % 3 * 20}%`,
+              animationDelay: `${i * 0.5}s`,
+              animationDuration: `${3 + i}s`
+            }}
+          ></div>
+        ))}
+      </div>
       
       <div className="relative z-10">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl font-bold text-white">GitHub Contributions</h3>
-          <div className="text-cyber-cyan font-mono text-sm">
-            {totalContributions.toLocaleString()} contributions
+        <div className="flex justify-between items-center mb-6">
+          <h3 className={`text-2xl font-bold text-white transition-all duration-500 ${animateStats ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            GitHub Contributions
+          </h3>
+          <div className={`text-cyber-cyan font-mono text-lg font-bold transition-all duration-700 ${animateStats ? 'animate-scale-in' : 'opacity-0'}`}>
+            <span className="inline-block animate-bounce">
+              {totalContributions.toLocaleString()}
+            </span>
+            <span className="ml-2 text-sm text-gray-400">contributions</span>
           </div>
         </div>
         
-        <div className="mb-4">
-          <div className="text-sm text-gray-400 mb-2">@adilmunawar - Last 12 months</div>
+        <div className="mb-6">
+          <div className={`text-sm text-gray-400 mb-3 transition-all duration-500 ${animateStats ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
+            @adilmunawar - Last 12 months
+          </div>
         </div>
         
         <div className="overflow-x-auto">
           <div className="grid grid-flow-col auto-cols-max gap-1 min-w-full">
             {getWeeks().map((week, weekIndex) => (
               <div key={weekIndex} className="grid grid-rows-7 gap-1">
-                {week.map((day) => (
+                {week.map((day, dayIndex) => (
                   <div
                     key={day.date}
-                    className={`w-3 h-3 rounded-sm ${getLevelColor(day.level)} hover:ring-2 hover:ring-cyber-cyan/50 transition-all duration-200 cursor-pointer group/day`}
+                    className={`w-3 h-3 rounded-sm ${getLevelColor(day.level)} hover:ring-2 hover:ring-cyber-cyan/50 transition-all duration-300 cursor-pointer group/day hover:scale-125 animate-scale-in`}
                     title={`${day.count} contributions on ${new Date(day.date).toLocaleDateString()}`}
+                    style={{ 
+                      animationDelay: `${(weekIndex * 7 + dayIndex) * 10}ms`,
+                      animationDuration: '0.5s'
+                    }}
                   >
-                    <div className="w-full h-full rounded-sm group-hover/day:scale-110 transition-transform duration-200"></div>
+                    <div className="w-full h-full rounded-sm group-hover/day:animate-pulse transition-all duration-200"></div>
                   </div>
                 ))}
               </div>
@@ -124,14 +162,18 @@ const GitHubStats = () => {
           </div>
         </div>
         
-        <div className="flex justify-between items-center mt-4 text-xs text-gray-400">
-          <span>Less</span>
+        <div className={`flex justify-between items-center mt-6 text-xs text-gray-400 transition-all duration-700 ${animateStats ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '400ms' }}>
+          <span className="hover:text-cyber-cyan transition-colors">Less</span>
           <div className="flex gap-1">
             {[0, 1, 2, 3, 4].map(level => (
-              <div key={level} className={`w-3 h-3 rounded-sm ${getLevelColor(level)}`}></div>
+              <div 
+                key={level} 
+                className={`w-3 h-3 rounded-sm ${getLevelColor(level)} hover:scale-125 transition-transform duration-200 animate-scale-in`}
+                style={{ animationDelay: `${500 + level * 100}ms` }}
+              ></div>
             ))}
           </div>
-          <span>More</span>
+          <span className="hover:text-cyber-cyan transition-colors">More</span>
         </div>
       </div>
     </Card>

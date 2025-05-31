@@ -136,6 +136,26 @@
   animation: drift3 30s ease-in-out infinite;
 }
 
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* New extraordinary gradient animations */
+.bg-gradient-moving {
+  background: linear-gradient(-45deg, #00ffff, #0080ff, #8000ff, #ff0080, #00ffff);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
 .bg-grid-pattern {
   background-image: 
     linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
@@ -143,6 +163,7 @@
   background-size: 50px 50px;
 }
 
+/* Enhanced keyframes */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -176,6 +197,17 @@
   100% { background-position: 200% 0; }
 }
 
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
 @keyframes drift1 {
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
   25% { transform: translate(30px, -30px) rotate(90deg); }
@@ -195,6 +227,15 @@
   40% { transform: translate(-30px, 10px) rotate(144deg); }
   60% { transform: translate(10px, -40px) rotate(216deg); }
   80% { transform: translate(-10px, -20px) rotate(288deg); }
+}
+
+/* Utility classes for performance-optimized animations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
 }
 
 /* Grid utility for GitHub contributions */

@@ -90,7 +90,7 @@ const SkillsSection = () => {
           <GitHubStats />
         </div>
 
-        {/* Skills Categories - Fixed heights */}
+        {/* Skills Categories - Professional height */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div
@@ -102,45 +102,45 @@ const SkillsSection = () => {
               }`}
               style={{ transitionDelay: `${(categoryIndex + 1) * 200}ms` }}
             >
-              {/* Category Card - Fixed height */}
-              <div className="relative group h-[600px]">
-                {/* Continuous glow effect */}
-                <div className={`absolute -inset-1 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-30 animate-pulse`}></div>
+              {/* Category Card - Professional height */}
+              <div className="relative group h-[420px]">
+                {/* Advanced glow effect */}
+                <div className={`absolute -inset-1 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-30 animate-pulse group-hover:opacity-60 transition-all duration-500`}></div>
                 
                 {/* Main card */}
-                <div className="relative bg-cyber-gray/40 backdrop-blur-xl rounded-2xl border border-white/20 p-8 hover:border-white/40 transition-all duration-500 h-full flex flex-col">
+                <div className="relative bg-cyber-gray/40 backdrop-blur-xl rounded-2xl border border-white/20 p-6 hover:border-white/40 transition-all duration-500 h-full flex flex-col group-hover:transform group-hover:scale-[1.02]">
                   {/* Category header */}
-                  <div className="mb-8">
+                  <div className="mb-6">
                     <h3 className={`text-2xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent mb-3`}>
                       {category.title}
                     </h3>
-                    <div className={`h-1 w-16 bg-gradient-to-r ${category.color} rounded-full`}></div>
+                    <div className={`h-1 w-16 bg-gradient-to-r ${category.color} rounded-full group-hover:w-24 transition-all duration-300`}></div>
                   </div>
 
-                  {/* Skills grid - Flex grow to fill remaining space */}
-                  <div className="grid grid-cols-4 gap-4 flex-grow content-start">
+                  {/* Skills grid - Optimized layout */}
+                  <div className="grid grid-cols-4 gap-3 flex-grow content-start">
                     {category.skills.map((skill, skillIndex) => (
                       <div
                         key={skill.name}
-                        className="group/skill relative flex flex-col items-center p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                        className="group/skill relative flex flex-col items-center p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300 cursor-pointer animate-scale-in"
                         style={{ 
                           animationDelay: `${skillIndex * 100}ms`
                         }}
                       >
                         {/* Skill icon */}
-                        <div className="relative w-12 h-12 mb-3 transition-all duration-300 group-hover/skill:scale-110 group-hover/skill:rotate-12">
+                        <div className="relative w-10 h-10 mb-2 transition-all duration-300 group-hover/skill:scale-110 group-hover/skill:rotate-12">
                           <img 
                             src={skill.icon} 
                             alt={skill.name}
                             className="w-full h-full object-contain filter brightness-90 group-hover/skill:brightness-110 transition-all duration-300"
                           />
                           
-                          {/* Glow effect on hover */}
-                          <div className={`absolute inset-0 bg-gradient-to-r ${category.color} rounded-lg opacity-0 group-hover/skill:opacity-20 blur-lg transition-all duration-300`}></div>
+                          {/* Enhanced glow effect on hover */}
+                          <div className={`absolute inset-0 bg-gradient-to-r ${category.color} rounded-lg opacity-0 group-hover/skill:opacity-30 blur-lg transition-all duration-300`}></div>
                         </div>
 
                         {/* Skill name */}
-                        <span className="text-xs text-center text-gray-300 group-hover/skill:text-white transition-colors duration-300 font-medium">
+                        <span className="text-xs text-center text-gray-300 group-hover/skill:text-white transition-colors duration-300 font-medium leading-tight">
                           {skill.name}
                         </span>
 
@@ -156,7 +156,7 @@ const SkillsSection = () => {
         </div>
       </div>
 
-      {/* Background decoration */}
+      {/* Enhanced background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl animate-drift-1"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl animate-drift-2"></div>
