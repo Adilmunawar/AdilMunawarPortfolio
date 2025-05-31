@@ -90,62 +90,62 @@ const SkillsSection = () => {
           <GitHubStats />
         </div>
 
-        {/* Skills Categories - Professional height */}
+        {/* Skills Categories - Optimized height */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.title}
-              className={`transition-all duration-1000 ${
+              className={`transition-all duration-1000 will-change-transform ${
                 isVisible 
                   ? 'opacity-100 transform translate-y-0' 
                   : 'opacity-0 transform translate-y-12'
               }`}
               style={{ transitionDelay: `${(categoryIndex + 1) * 200}ms` }}
             >
-              {/* Category Card - Professional height */}
-              <div className="relative group h-[420px]">
-                {/* Advanced glow effect */}
-                <div className={`absolute -inset-1 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-30 animate-pulse group-hover:opacity-60 transition-all duration-500`}></div>
+              {/* Category Card - Optimized height */}
+              <div className="relative group h-[320px]">
+                {/* Slower, smoother glow effect */}
+                <div className={`absolute -inset-1 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-1000 ease-in-out`}></div>
                 
                 {/* Main card */}
-                <div className="relative bg-cyber-gray/40 backdrop-blur-xl rounded-2xl border border-white/20 p-6 hover:border-white/40 transition-all duration-500 h-full flex flex-col group-hover:transform group-hover:scale-[1.02]">
+                <div className="relative bg-cyber-gray/30 backdrop-blur-xl rounded-2xl border border-white/10 p-5 hover:border-white/30 transition-all duration-700 h-full flex flex-col group-hover:transform group-hover:scale-[1.01]">
                   {/* Category header */}
-                  <div className="mb-6">
-                    <h3 className={`text-2xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent mb-3`}>
+                  <div className="mb-5">
+                    <h3 className={`text-xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent mb-2`}>
                       {category.title}
                     </h3>
-                    <div className={`h-1 w-16 bg-gradient-to-r ${category.color} rounded-full group-hover:w-24 transition-all duration-300`}></div>
+                    <div className={`h-0.5 w-12 bg-gradient-to-r ${category.color} rounded-full group-hover:w-20 transition-all duration-500`}></div>
                   </div>
 
-                  {/* Skills grid - Optimized layout */}
-                  <div className="grid grid-cols-4 gap-3 flex-grow content-start">
+                  {/* Skills grid - Compact layout */}
+                  <div className="grid grid-cols-4 gap-2.5 flex-grow content-start">
                     {category.skills.map((skill, skillIndex) => (
                       <div
                         key={skill.name}
-                        className="group/skill relative flex flex-col items-center p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300 cursor-pointer animate-scale-in"
+                        className="group/skill relative flex flex-col items-center p-2.5 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-500 cursor-pointer will-change-transform"
                         style={{ 
                           animationDelay: `${skillIndex * 100}ms`
                         }}
                       >
                         {/* Skill icon */}
-                        <div className="relative w-10 h-10 mb-2 transition-all duration-300 group-hover/skill:scale-110 group-hover/skill:rotate-12">
+                        <div className="relative w-8 h-8 mb-1.5 transition-all duration-500 group-hover/skill:scale-105">
                           <img 
                             src={skill.icon} 
                             alt={skill.name}
-                            className="w-full h-full object-contain filter brightness-90 group-hover/skill:brightness-110 transition-all duration-300"
+                            className="w-full h-full object-contain filter brightness-90 group-hover/skill:brightness-110 transition-all duration-500"
                           />
                           
-                          {/* Enhanced glow effect on hover */}
-                          <div className={`absolute inset-0 bg-gradient-to-r ${category.color} rounded-lg opacity-0 group-hover/skill:opacity-30 blur-lg transition-all duration-300`}></div>
+                          {/* Subtle glow effect on hover */}
+                          <div className={`absolute inset-0 bg-gradient-to-r ${category.color} rounded-lg opacity-0 group-hover/skill:opacity-20 blur-lg transition-all duration-700`}></div>
                         </div>
 
                         {/* Skill name */}
-                        <span className="text-xs text-center text-gray-300 group-hover/skill:text-white transition-colors duration-300 font-medium leading-tight">
+                        <span className="text-xs text-center text-gray-300 group-hover/skill:text-white transition-colors duration-500 font-medium leading-tight">
                           {skill.name}
                         </span>
 
-                        {/* Hover indicator */}
-                        <div className={`absolute inset-0 rounded-xl bg-gradient-to-r ${category.color} opacity-0 group-hover/skill:opacity-10 transition-all duration-300`}></div>
+                        {/* Subtle hover indicator */}
+                        <div className={`absolute inset-0 rounded-lg bg-gradient-to-r ${category.color} opacity-0 group-hover/skill:opacity-5 transition-all duration-700`}></div>
                       </div>
                     ))}
                   </div>
@@ -156,11 +156,11 @@ const SkillsSection = () => {
         </div>
       </div>
 
-      {/* Enhanced background decoration */}
+      {/* Optimized background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl animate-drift-1"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl animate-drift-2"></div>
-        <div className="absolute top-3/4 left-1/2 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl animate-drift-3"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500/3 rounded-full blur-3xl will-change-transform" style={{ animation: 'drift1 25s ease-in-out infinite' }}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-emerald-500/3 rounded-full blur-3xl will-change-transform" style={{ animation: 'drift2 30s ease-in-out infinite' }}></div>
+        <div className="absolute top-3/4 left-1/2 w-72 h-72 bg-purple-500/3 rounded-full blur-3xl will-change-transform" style={{ animation: 'drift3 35s ease-in-out infinite' }}></div>
       </div>
     </section>
   );
