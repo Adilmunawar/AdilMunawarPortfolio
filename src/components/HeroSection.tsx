@@ -1,6 +1,7 @@
 
 import { Github, Instagram, Linkedin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import TypingAnimation from './TypingAnimation';
 
 const HeroSection = () => {
   const socialLinks = [{
@@ -67,7 +68,7 @@ const HeroSection = () => {
         <div className="animate-fade-in-up">
           {/* Status indicator */}
           <div className="flex items-center justify-center mb-4">
-            <div className="flex items-center gap-2 px-4 py-2 bg-emerald-500/20 rounded-full border border-emerald-500/30 backdrop-blur-sm">
+            <div className="flex items-center gap-2 px-4 py-2 bg-emerald-500/20 rounded-full border border-emerald-500/30 backdrop-blur-sm neon-hover">
               <div className="w-2 h-2 bg-emerald-500 rounded-full professional-pulse"></div>
               <span className="text-emerald-400 text-sm font-medium">Available for work</span>
             </div>
@@ -77,18 +78,16 @@ const HeroSection = () => {
             Hello, I'm
           </h2>
           
-          {/* Professional name with subtle effects */}
+          {/* Professional name with gradient effect */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg relative">
-            <span className="text-gradient-slow relative z-10">Adil Munawar</span>
+            <span className="text-gradient-flow relative z-10">Adil Munawar</span>
           </h1>
           
-          {/* Professional subtitle */}
-          <div className="relative mb-8">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-200 drop-shadow-md animate-fade-in-up" style={{
-              animationDelay: '0.3s'
-            }}>
-              Full-Stack Developer
-            </h3>
+          {/* Typing animation instead of static text */}
+          <div className="relative mb-8 animate-fade-in-up" style={{
+            animationDelay: '0.3s'
+          }}>
+            <TypingAnimation />
           </div>
 
           {/* Skills preview */}
@@ -96,7 +95,7 @@ const HeroSection = () => {
             animationDelay: '0.4s'
           }}>
             {['React', 'Node.js', 'TypeScript', 'Python', 'Azure'].map((skill, index) => (
-              <span key={skill} className="px-3 py-1 text-sm bg-cyber-cyan/10 border border-cyber-cyan/30 rounded-full text-cyber-cyan backdrop-blur-sm hover:bg-cyber-cyan/20 transition-all duration-300 animate-scale-in" style={{
+              <span key={skill} className="px-3 py-1 text-sm bg-cyber-cyan/10 border border-cyber-cyan/30 rounded-full text-cyber-cyan backdrop-blur-sm hover:bg-cyber-cyan/20 transition-all duration-300 animate-scale-in neon-hover" style={{
                 animationDelay: `${0.5 + index * 0.1}s`
               }}>
                 {skill}
@@ -105,7 +104,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Enhanced social links with improved tilt and dot effects */}
+        {/* Enhanced social links with smooth animations */}
         <div className="flex justify-center space-x-6 mb-12 animate-scale-in" style={{
           animationDelay: '0.6s'
         }}>
@@ -115,7 +114,7 @@ const HeroSection = () => {
               href={social.href} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className={`group relative w-16 h-16 bg-gradient-to-br ${social.bgGradient} ${social.hoverGradient} rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-110 hover:rotate-[8deg] backdrop-blur-sm border-2 ${social.borderColor} hover:shadow-xl ${social.shadowColor} ${social.color} overflow-visible`}
+              className={`group relative w-16 h-16 bg-gradient-to-br ${social.bgGradient} ${social.hoverGradient} rounded-2xl flex items-center justify-center social-icon-enhanced backdrop-blur-sm border-2 ${social.borderColor} ${social.color} overflow-visible neon-hover`}
               aria-label={social.label}
               style={{
                 animationDelay: `${index * 0.1}s`
@@ -123,19 +122,18 @@ const HeroSection = () => {
             >
               <social.Icon size={24} className="transition-all duration-300 group-hover:scale-110 relative z-10" />
               
-              {/* Enhanced animated notification dot with better positioning and effects */}
-              <div className={`absolute -top-2 -right-2 w-4 h-4 ${social.dotColor} rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center z-20`}>
-                <div className={`w-2 h-2 ${social.dotColor} rounded-full animate-ping`}></div>
-                <div className={`absolute w-1.5 h-1.5 ${social.dotColor} rounded-full animate-pulse`}></div>
+              {/* Smooth animated notification dot */}
+              <div className={`icon-dot ${social.dotColor} smooth-dot-animation`}>
+                <div className={`w-2 h-2 ${social.dotColor} rounded-full`}></div>
               </div>
               
               {/* Ripple effect on hover */}
               <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${social.bgGradient} opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse`}></div>
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${social.bgGradient} opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
               </div>
               
               {/* Enhanced glow effect */}
-              <div className={`absolute inset-0 rounded-2xl border-2 border-cyber-cyan/20 scale-90 group-hover:scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse`}></div>
+              <div className={`absolute inset-0 rounded-2xl border-2 border-cyber-cyan/20 scale-90 group-hover:scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
               
               {/* Floating sparkle effect */}
               <div className="absolute -top-1 -left-1 w-2 h-2 bg-white/60 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 animate-bounce" style={{ animationDelay: '0.1s' }}></div>
@@ -149,7 +147,7 @@ const HeroSection = () => {
           animationDelay: '0.8s'
         }}>
           <Button 
-            className="relative bg-cyber-cyan text-black hover:bg-cyber-blue px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 glow-effect hover:shadow-xl hover:shadow-cyber-cyan/30 backdrop-blur-sm border border-cyber-cyan/50 group overflow-hidden" 
+            className="relative bg-cyber-cyan text-black hover:bg-cyber-blue px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 glow-effect hover:shadow-xl hover:shadow-cyber-cyan/30 backdrop-blur-sm border border-cyber-cyan/50 group overflow-hidden neon-hover" 
             onClick={() => document.getElementById('about')?.scrollIntoView({
               behavior: 'smooth'
             })}

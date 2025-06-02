@@ -67,12 +67,50 @@
   }
 }
 
-@keyframes text-gradient-slow {
+@keyframes text-gradient-flow {
   0%, 100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--cyber-cyan);
+  }
+}
+
+@keyframes neon-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.6), 0 0 50px rgba(0, 245, 255, 0.4);
+  }
+}
+
+@keyframes smooth-dot-pulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
   }
 }
 
@@ -163,13 +201,41 @@
   animation: professional-pulse 4s ease-in-out infinite;
 }
 
-.text-gradient-slow {
+.text-gradient-flow {
   background: linear-gradient(-45deg, var(--cyber-cyan), var(--cyber-blue), #8b5cf6, var(--cyber-cyan));
   background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: text-gradient-slow 8s ease infinite;
+  animation: text-gradient-flow 6s ease infinite;
+}
+
+.heading-gradient {
+  background: linear-gradient(135deg, #ffffff, var(--cyber-cyan), var(--cyber-blue), #ffffff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-gradient-flow 8s ease infinite;
+}
+
+.typing-animation {
+  overflow: hidden;
+  border-right: 3px solid var(--cyber-cyan);
+  white-space: nowrap;
+  animation: typing 2s steps(20, end), blink-caret 1s step-end infinite;
+}
+
+.neon-hover {
+  transition: all 0.3s ease;
+}
+
+.neon-hover:hover {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+.smooth-dot-animation {
+  animation: smooth-dot-pulse 2s ease-in-out infinite;
 }
 
 .animate-fade-in-up {
@@ -228,29 +294,30 @@
 }
 
 /* Enhanced hover effects for social icons */
+.social-icon-enhanced {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 .social-icon-enhanced:hover {
-  transform: scale(1.25) rotate(8deg);
-  box-shadow: 0 10px 30px rgba(0, 245, 255, 0.4);
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 8px 25px rgba(0, 245, 255, 0.3);
 }
 
 .social-icon-enhanced .icon-dot {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  width: 16px;
-  height: 16px;
+  top: -6px;
+  right: -6px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 20;
 }
 
 .social-icon-enhanced:hover .icon-dot {
   opacity: 1;
-  animation: pulse 1s infinite;
+  animation: smooth-dot-pulse 1.5s ease-in-out infinite;
 }
 
 /* Professional card hover effects */
