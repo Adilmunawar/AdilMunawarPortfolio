@@ -105,7 +105,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Professional social links with tilt and dot effect */}
+        {/* Enhanced social links with improved tilt and dot effects */}
         <div className="flex justify-center space-x-6 mb-12 animate-scale-in" style={{
           animationDelay: '0.6s'
         }}>
@@ -115,20 +115,31 @@ const HeroSection = () => {
               href={social.href} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className={`group relative w-16 h-16 bg-gradient-to-br ${social.bgGradient} ${social.hoverGradient} rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-110 hover:rotate-12 backdrop-blur-sm border-2 ${social.borderColor} hover:shadow-xl ${social.shadowColor} ${social.color}`}
+              className={`group relative w-16 h-16 bg-gradient-to-br ${social.bgGradient} ${social.hoverGradient} rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-110 hover:rotate-[8deg] backdrop-blur-sm border-2 ${social.borderColor} hover:shadow-xl ${social.shadowColor} ${social.color} overflow-visible`}
               aria-label={social.label}
               style={{
                 animationDelay: `${index * 0.1}s`
               }}
             >
-              <social.Icon size={24} className="transition-all duration-300 group-hover:scale-110" />
+              <social.Icon size={24} className="transition-all duration-300 group-hover:scale-110 relative z-10" />
               
-              {/* Animated notification dot */}
-              <div className={`absolute -top-1 -right-1 w-3 h-3 ${social.dotColor} rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse`}></div>
+              {/* Enhanced animated notification dot with better positioning and effects */}
+              <div className={`absolute -top-2 -right-2 w-4 h-4 ${social.dotColor} rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center z-20`}>
+                <div className={`w-2 h-2 ${social.dotColor} rounded-full animate-ping`}></div>
+                <div className={`absolute w-1.5 h-1.5 ${social.dotColor} rounded-full animate-pulse`}></div>
+              </div>
               
-              {/* Subtle hover effects */}
-              <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${social.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-              <div className="absolute inset-0 rounded-2xl border-2 border-cyber-cyan/30 scale-95 group-hover:scale-105 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              {/* Ripple effect on hover */}
+              <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${social.bgGradient} opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse`}></div>
+              </div>
+              
+              {/* Enhanced glow effect */}
+              <div className={`absolute inset-0 rounded-2xl border-2 border-cyber-cyan/20 scale-90 group-hover:scale-110 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse`}></div>
+              
+              {/* Floating sparkle effect */}
+              <div className="absolute -top-1 -left-1 w-2 h-2 bg-white/60 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+              <div className="absolute -bottom-1 -right-1 w-1 h-1 bg-cyber-cyan/80 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 animate-bounce" style={{ animationDelay: '0.3s' }}></div>
             </a>
           ))}
         </div>
