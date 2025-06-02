@@ -49,10 +49,10 @@ const ServicesSection = () => {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient animate-fade-in-up drop-shadow-lg">
+          <h2 className="text-5xl md:text-7xl font-bold mb-6 section-heading animate-fade-in-up">
             Services
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up drop-shadow-md" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto animate-fade-in-up drop-shadow-md" style={{ animationDelay: '0.2s' }}>
             Delivering cutting-edge solutions with modern technologies and best practices
           </p>
         </div>
@@ -61,7 +61,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="group relative p-8 bg-cyber-gray/30 border-cyber-cyan/30 hover:border-cyber-cyan/60 transition-all duration-700 hover:scale-105 backdrop-blur-xl animate-scale-in overflow-hidden"
+              className="group relative p-8 bg-cyber-gray/30 border-cyber-cyan/30 hover:border-cyber-cyan/60 transition-all duration-700 hover:scale-105 backdrop-blur-xl animate-scale-in overflow-hidden neon-hover"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Animated background gradient */}
@@ -75,7 +75,7 @@ const ServicesSection = () => {
                   <service.Icon size={36} className="text-white drop-shadow-lg group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-white drop-shadow-md group-hover:text-cyber-cyan transition-colors duration-500">{service.title}</h3>
-                <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-500 drop-shadow-sm">{service.description}</p>
+                <p className="text-gray-200 leading-relaxed group-hover:text-gray-100 transition-colors duration-500 drop-shadow-sm">{service.description}</p>
               </div>
 
               {/* Hover border animation */}

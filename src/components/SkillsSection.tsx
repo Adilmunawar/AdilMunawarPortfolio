@@ -1,166 +1,102 @@
 
-import { useState, useEffect } from 'react';
-import GitHubStats from './GitHubStats';
+import { Card } from '@/components/ui/card';
 
 const SkillsSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const skills = [
+    { name: 'React & Next.js', level: 95, color: 'from-blue-500 to-cyan-500' },
+    { name: 'TypeScript', level: 90, color: 'from-blue-600 to-blue-400' },
+    { name: 'Node.js & Express', level: 88, color: 'from-green-500 to-emerald-500' },
+    { name: 'Python & AI/ML', level: 85, color: 'from-yellow-500 to-orange-500' },
+    { name: 'Database Design', level: 87, color: 'from-purple-500 to-pink-500' },
+    { name: 'Cloud Platforms', level: 82, color: 'from-indigo-500 to-purple-500' },
+    { name: 'Mobile Development', level: 80, color: 'from-pink-500 to-rose-500' },
+    { name: 'DevOps & CI/CD', level: 78, color: 'from-teal-500 to-cyan-500' },
+  ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    const section = document.getElementById('skills-section');
-    if (section) observer.observe(section);
-
-    return () => observer.disconnect();
-  }, []);
-
-  const skillCategories = [
-    {
-      title: "Frontend",
-      color: "from-cyan-500 to-blue-500",
-      skills: [
-        { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-        { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-        { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-        { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-        { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-        { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-        { name: "Vue.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" }
-      ]
-    },
-    {
-      title: "Backend",
-      color: "from-emerald-500 to-teal-500",
-      skills: [
-        { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-        { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-        { name: "Express", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-        { name: "SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" },
-        { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-        { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
-        { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
-        { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" }
-      ]
-    },
-    {
-      title: "Tools & Environment",
-      color: "from-purple-500 to-pink-500",
-      skills: [
-        { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-        { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-        { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
-        { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-        { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-        { name: "Webpack", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" },
-        { name: "Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
-        { name: "Vercel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" }
-      ]
-    }
+  const frameworks = [
+    'React', 'Next.js', 'Vue.js', 'Node.js', 'Express', 'FastAPI',
+    'Django', 'PostgreSQL', 'MongoDB', 'Redis', 'Docker', 'AWS',
+    'Vercel', 'Tailwind CSS', 'TypeScript', 'Python', 'JavaScript'
   ];
 
   return (
-    <section id="skills" className="min-h-screen py-20 px-4 relative overflow-hidden">
-      <div id="skills-section" className="max-w-7xl mx-auto relative z-10">
-        {/* Section Title */}
+    <section id="skills" className="min-h-screen py-20 px-4 relative overflow-hidden bg-gradient-to-b from-cyber-dark via-cyber-gray/5 to-cyber-dark">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-cyber-cyan/3 rounded-full blur-3xl animate-drift-1"></div>
+      <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-cyber-blue/3 rounded-full blur-3xl animate-drift-2"></div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className={`text-5xl md:text-7xl font-bold mb-6 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
-          }`}>
-            <span className="text-gradient animate-shimmer">Skills & Expertise</span>
+          <h2 className="text-5xl md:text-7xl font-bold mb-6 section-heading animate-fade-in-up">
+            Skills & Expertise
           </h2>
-          <p className={`text-xl text-gray-300 max-w-3xl mx-auto transition-all duration-1000 delay-300 ${
-            isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
-          }`}>
-            Mastering the latest technologies to build exceptional digital experiences
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto animate-fade-in-up drop-shadow-md" style={{ animationDelay: '0.2s' }}>
+            Mastering modern technologies to build exceptional digital experiences
           </p>
         </div>
 
-        {/* GitHub Stats */}
-        <div className={`mb-16 transition-all duration-1000 delay-200 ${
-          isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
-        }`}>
-          <GitHubStats />
-        </div>
-
-        {/* Skills Categories */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <div
-              key={category.title}
-              className={`transition-all duration-1000 will-change-transform ${
-                isVisible 
-                  ? 'opacity-100 transform translate-y-0' 
-                  : 'opacity-0 transform translate-y-12'
-              }`}
-              style={{ transitionDelay: `${(categoryIndex + 1) * 200}ms` }}
-            >
-              {/* Category Card with hover tilt effect */}
-              <div className="relative group h-[280px] animate-subtle-tilt hover:animate-none">
-                {/* Slower, smoother glow effect */}
-                <div className={`absolute -inset-1 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-10 group-hover:opacity-20 transition-all duration-[2000ms] ease-in-out`}></div>
-                
-                {/* Main card */}
-                <div className="relative bg-cyber-gray/30 backdrop-blur-xl rounded-2xl border border-white/10 p-5 hover:border-white/30 transition-all duration-700 h-full flex flex-col group-hover:transform group-hover:scale-[1.01] group-hover:rotate-1">
-                  {/* Category header */}
-                  <div className="mb-5">
-                    <h3 className={`text-xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent mb-2`}>
-                      {category.title}
-                    </h3>
-                    <div className={`h-0.5 w-12 bg-gradient-to-r ${category.color} rounded-full group-hover:w-20 transition-all duration-500`}></div>
-                  </div>
-
-                  {/* Skills grid */}
-                  <div className="grid grid-cols-4 gap-2.5 flex-grow content-start">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div
-                        key={skill.name}
-                        className="group/skill relative flex flex-col items-center p-2.5 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-500 cursor-pointer will-change-transform hover:rotate-2"
-                        style={{ 
-                          animationDelay: `${skillIndex * 100}ms`
-                        }}
-                      >
-                        {/* Skill icon */}
-                        <div className="relative w-8 h-8 mb-1.5 transition-all duration-500 group-hover/skill:scale-105">
-                          <img 
-                            src={skill.icon} 
-                            alt={skill.name}
-                            className="w-full h-full object-contain filter brightness-90 group-hover/skill:brightness-110 transition-all duration-500"
-                          />
-                          
-                          {/* Subtle glow effect on hover */}
-                          <div className={`absolute inset-0 bg-gradient-to-r ${category.color} rounded-lg opacity-0 group-hover/skill:opacity-20 blur-lg transition-all duration-700`}></div>
-                        </div>
-
-                        {/* Skill name */}
-                        <span className="text-xs text-center text-gray-300 group-hover/skill:text-white transition-colors duration-500 font-medium leading-tight">
-                          {skill.name}
-                        </span>
-
-                        {/* Subtle hover indicator */}
-                        <div className={`absolute inset-0 rounded-lg bg-gradient-to-r ${category.color} opacity-0 group-hover/skill:opacity-5 transition-all duration-700`}></div>
-                      </div>
-                    ))}
-                  </div>
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Skills Progress */}
+          <div className="space-y-6">
+            <h3 className="text-3xl font-bold text-gradient-enhanced mb-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              Technical Proficiency
+            </h3>
+            
+            {skills.map((skill, index) => (
+              <Card 
+                key={skill.name}
+                className="p-6 bg-cyber-gray/20 border-cyber-cyan/30 hover:border-cyber-cyan/60 backdrop-blur-xl transition-all duration-500 animate-scale-in neon-hover"
+                style={{ animationDelay: `${0.4 + index * 0.1}s` }}
+              >
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-white font-semibold text-lg">{skill.name}</span>
+                  <span className="text-cyber-cyan font-bold">{skill.level}%</span>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+                <div className="w-full bg-cyber-gray/50 rounded-full h-3 overflow-hidden">
+                  <div 
+                    className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out shadow-lg`}
+                    style={{ 
+                      width: `${skill.level}%`,
+                      animation: `scale-in 1s ease-out ${0.5 + index * 0.1}s both`
+                    }}
+                  ></div>
+                </div>
+              </Card>
+            ))}
+          </div>
 
-      {/* Optimized background decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500/3 rounded-full blur-3xl will-change-transform" style={{ animation: 'drift1 25s ease-in-out infinite' }}></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-emerald-500/3 rounded-full blur-3xl will-change-transform" style={{ animation: 'drift2 30s ease-in-out infinite' }}></div>
-        <div className="absolute top-3/4 left-1/2 w-72 h-72 bg-purple-500/3 rounded-full blur-3xl will-change-transform" style={{ animation: 'drift3 35s ease-in-out infinite' }}></div>
+          {/* Technologies */}
+          <div>
+            <h3 className="text-3xl font-bold text-gradient-enhanced mb-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              Technologies & Frameworks
+            </h3>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {frameworks.map((framework, index) => (
+                <Card 
+                  key={framework}
+                  className="p-4 bg-cyber-gray/20 border-cyber-cyan/20 hover:border-cyber-cyan/60 backdrop-blur-xl text-center transition-all duration-500 hover:scale-105 animate-scale-in neon-hover group"
+                  style={{ animationDelay: `${0.5 + index * 0.05}s` }}
+                >
+                  <span className="text-white font-medium group-hover:text-cyber-cyan transition-colors duration-300">
+                    {framework}
+                  </span>
+                </Card>
+              ))}
+            </div>
+
+            {/* Additional info card */}
+            <Card className="mt-8 p-6 bg-cyber-gray/20 border-cyber-cyan/30 hover:border-cyber-cyan/60 backdrop-blur-xl transition-all duration-500 animate-fade-in-up neon-hover" style={{ animationDelay: '1s' }}>
+              <h4 className="text-xl font-bold text-gradient-enhanced mb-4">Continuous Learning</h4>
+              <p className="text-gray-200 leading-relaxed">
+                Staying at the forefront of technology through continuous learning and hands-on experience 
+                with emerging tools and methodologies. Always exploring new ways to solve complex problems 
+                and deliver innovative solutions.
+              </p>
+            </Card>
+          </div>
+        </div>
       </div>
     </section>
   );
