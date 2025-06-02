@@ -12,51 +12,54 @@ const ProjectsSection = () => {
       title: 'AdiNox',
       description: 'A cutting-edge web application built with modern technologies featuring responsive design and advanced functionality.',
       longDescription: 'AdiNox is a comprehensive web platform that showcases modern development practices with React, TypeScript, and advanced UI components. Features include real-time data processing, responsive design, and optimized performance.',
-      image: '/lovable-uploads/eaf50e40-682a-4730-ac3c-407cf3e4896e.png',
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
       tech: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js'],
       github: 'https://github.com/adilmunawar/adinox',
       live: 'https://adinox.vercel.app',
       status: 'live',
-      statusColor: 'text-green-400',
-      statusBg: 'bg-green-500/20',
+      statusColor: 'text-emerald-400',
+      statusBg: 'bg-emerald-500/10',
+      statusBorder: 'border-emerald-400/20',
       statusIcon: Play,
-      gradient: 'from-green-500/10 to-emerald-500/10',
-      hoverGradient: 'hover:from-green-500/25 hover:to-emerald-500/25',
-      borderColor: 'border-green-400/30',
-      accentColor: 'text-green-400'
+      gradient: 'from-emerald-500/5 to-green-500/5',
+      hoverGradient: 'hover:from-emerald-500/15 hover:to-green-500/15',
+      borderColor: 'border-emerald-400/20 hover:border-emerald-400/40',
+      accentColor: 'text-emerald-400'
     },
     {
       title: 'Aditron',
       description: 'An innovative platform showcasing advanced web technologies with sleek design and powerful features.',
       longDescription: 'Aditron demonstrates expertise in full-stack development with advanced features like real-time updates, interactive dashboards, and seamless user experience across all devices.',
-      image: '/Screenshot 2025-05-28 213514.png',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80',
       tech: ['Next.js', 'React', 'MongoDB', 'Express'],
       github: 'https://github.com/adilmunawar/aditron',
       live: 'https://aditron.vercel.app',
       status: 'paused',
-      statusColor: 'text-yellow-400',
-      statusBg: 'bg-yellow-500/20',
+      statusColor: 'text-amber-400',
+      statusBg: 'bg-amber-500/10',
+      statusBorder: 'border-amber-400/20',
       statusIcon: Pause,
-      gradient: 'from-yellow-500/10 to-orange-500/10',
-      hoverGradient: 'hover:from-yellow-500/25 hover:to-orange-500/25',
-      borderColor: 'border-yellow-400/30',
-      accentColor: 'text-yellow-400'
+      gradient: 'from-amber-500/5 to-orange-500/5',
+      hoverGradient: 'hover:from-amber-500/15 hover:to-orange-500/15',
+      borderColor: 'border-amber-400/20 hover:border-amber-400/40',
+      accentColor: 'text-amber-400'
     },
     {
       title: 'AdiCorp',
       description: 'A sophisticated corporate platform featuring modern design principles and enterprise-level functionality.',
       longDescription: 'AdiCorp represents enterprise-grade development with advanced authentication, data visualization, and comprehensive admin panels. Built with scalability and performance in mind.',
-      image: '/Screenshot 2025-05-28 213528.png',
+      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
       tech: ['React', 'Python', 'PostgreSQL', 'Docker'],
       github: 'https://github.com/adilmunawar/adicorp',
       live: 'https://adicorp.vercel.app',
       status: 'development',
       statusColor: 'text-blue-400',
-      statusBg: 'bg-blue-500/20',
+      statusBg: 'bg-blue-500/10',
+      statusBorder: 'border-blue-400/20',
       statusIcon: Code2,
-      gradient: 'from-blue-500/10 to-cyan-500/10',
-      hoverGradient: 'hover:from-blue-500/25 hover:to-cyan-500/25',
-      borderColor: 'border-blue-400/30',
+      gradient: 'from-blue-500/5 to-cyan-500/5',
+      hoverGradient: 'hover:from-blue-500/15 hover:to-cyan-500/15',
+      borderColor: 'border-blue-400/20 hover:border-blue-400/40',
       accentColor: 'text-blue-400'
     }
   ];
@@ -71,29 +74,29 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="min-h-screen py-20 px-4 relative overflow-hidden">
-      {/* Enhanced background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-gray-900/30 to-cyber-dark"></div>
+    <section id="projects" className="min-h-screen py-20 px-4 relative overflow-hidden bg-gradient-to-b from-cyber-dark to-gray-900">
+      {/* Dark theme background */}
+      <div className="absolute inset-0 bg-cyber-dark/90"></div>
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
       {/* Floating background elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-purple-500/8 to-pink-500/8 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-blue-500/8 to-cyan-500/8 rounded-full blur-3xl animate-float-delayed"></div>
-      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-r from-green-500/6 to-emerald-500/6 rounded-full blur-3xl animate-drift-1"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-full blur-3xl animate-float-delayed"></div>
+      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-r from-green-500/3 to-emerald-500/3 rounded-full blur-3xl animate-drift-1"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Enhanced header */}
         <div className="text-center mb-20 animate-fade-in-up">
           <div className="inline-block mb-8">
-            <span className="text-cyber-cyan text-sm font-semibold tracking-widest uppercase bg-cyber-cyan/10 px-6 py-3 rounded-full border border-cyber-cyan/30 backdrop-blur-sm">
+            <span className="text-cyber-cyan text-sm font-semibold tracking-widest uppercase bg-cyber-cyan/5 px-6 py-3 rounded-full border border-cyber-cyan/20 backdrop-blur-sm">
               <Sparkles className="inline w-4 h-4 mr-2" />
               Featured Work
             </span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 text-gradient drop-shadow-2xl">
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 text-gradient-slow drop-shadow-2xl">
             My Projects
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
             Explore my latest creations showcasing modern web technologies, 
             <span className="text-cyber-cyan font-semibold"> innovative solutions</span>, and 
             cutting-edge design principles
@@ -105,14 +108,14 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Card 
               key={index}
-              className={`group relative bg-gradient-to-br ${project.gradient} ${project.hoverGradient} border-2 ${project.borderColor} hover:border-opacity-100 rounded-3xl overflow-hidden transition-all duration-700 hover:scale-[1.02] cursor-pointer backdrop-blur-xl animate-scale-in shadow-2xl hover:shadow-3xl`}
+              className={`group relative bg-gray-900/40 backdrop-blur-xl border-2 ${project.borderColor} rounded-3xl overflow-hidden transition-all duration-700 hover:scale-[1.02] cursor-pointer animate-scale-in shadow-2xl hover:shadow-3xl`}
               style={{ animationDelay: `${index * 0.2}s` }}
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Status badge */}
               <div className="absolute top-4 right-4 z-20">
-                <div className={`flex items-center gap-2 px-3 py-1 rounded-full ${project.statusBg} border ${project.borderColor} backdrop-blur-sm`}>
+                <div className={`flex items-center gap-2 px-3 py-1 rounded-full ${project.statusBg} border ${project.statusBorder} backdrop-blur-sm`}>
                   <project.statusIcon size={12} className={project.statusColor} />
                   <span className={`text-xs font-semibold ${project.statusColor}`}>
                     {getStatusText(project.status)}
@@ -122,7 +125,7 @@ const ProjectsSection = () => {
 
               {/* Enhanced image container */}
               <div className="relative h-64 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent z-10"></div>
                 <img 
                   src={project.image} 
                   alt={project.title}
@@ -148,7 +151,7 @@ const ProjectsSection = () => {
                   <Button
                     size="sm"
                     variant="outline"
-                    className="bg-white/10 text-white border-white/30 hover:bg-white/20 rounded-full px-4 py-2 backdrop-blur-sm transition-all duration-300 hover:scale-110"
+                    className="bg-gray-800/60 text-gray-200 border-gray-600/30 hover:bg-gray-700/60 rounded-full px-4 py-2 backdrop-blur-sm transition-all duration-300 hover:scale-110"
                     onClick={(e) => {
                       e.stopPropagation();
                       window.open(project.github, '_blank');
@@ -167,7 +170,7 @@ const ProjectsSection = () => {
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className={`px-3 py-1 text-xs rounded-full bg-cyber-cyan/10 border border-cyber-cyan/30 ${project.accentColor} backdrop-blur-sm transition-all duration-300 hover:bg-cyber-cyan/20 hover:scale-105`}
+                      className={`px-3 py-1 text-xs rounded-full bg-gray-800/40 border border-gray-700/50 ${project.accentColor} backdrop-blur-sm transition-all duration-300 hover:bg-gray-700/60 hover:scale-105`}
                     >
                       {tech}
                     </span>
@@ -183,10 +186,10 @@ const ProjectsSection = () => {
                 </p>
 
                 {/* Action buttons */}
-                <div className="flex gap-3 pt-4 border-t border-gray-700/50">
+                <div className="flex gap-3 pt-4 border-t border-gray-700/30">
                   <Button
                     size="sm"
-                    className={`flex-1 bg-gradient-to-r ${project.gradient} ${project.hoverGradient} border ${project.borderColor} ${project.accentColor} hover:text-white transition-all duration-500 hover:scale-105 backdrop-blur-sm rounded-xl`}
+                    className={`flex-1 bg-gray-800/40 border border-gray-700/50 ${project.accentColor} hover:bg-gray-700/60 hover:text-white transition-all duration-500 hover:scale-105 backdrop-blur-sm rounded-xl`}
                     onClick={() => window.open(project.live, '_blank')}
                   >
                     <ExternalLink size={16} className="mr-2" />
@@ -195,7 +198,7 @@ const ProjectsSection = () => {
                   <Button
                     size="sm"
                     variant="outline"
-                    className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-700/50 hover:text-white transition-all duration-500 hover:scale-105 backdrop-blur-sm rounded-xl"
+                    className="flex-1 border-gray-700/50 text-gray-400 hover:bg-gray-800/40 hover:text-gray-200 transition-all duration-500 hover:scale-105 backdrop-blur-sm rounded-xl"
                     onClick={() => window.open(project.github, '_blank')}
                   >
                     <Github size={16} className="mr-2" />
@@ -205,7 +208,7 @@ const ProjectsSection = () => {
               </div>
 
               {/* Hover glow effect */}
-              <div className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 bg-gradient-to-r ${project.gradient} blur-xl`}></div>
+              <div className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-700 bg-gradient-to-r ${project.gradient} blur-xl`}></div>
               
               {/* Animated border */}
               <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
@@ -219,7 +222,7 @@ const ProjectsSection = () => {
         <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
           <div className="relative inline-block">
             <Button 
-              className="bg-gradient-to-r from-cyber-cyan to-blue-500 text-black hover:from-blue-500 hover:to-purple-500 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-700 hover:scale-110 shadow-2xl shadow-cyber-cyan/30 hover:shadow-blue-500/50 backdrop-blur-sm border border-white/20 group relative overflow-hidden"
+              className="bg-gradient-to-r from-cyber-cyan to-blue-500 text-black hover:from-blue-500 hover:to-purple-500 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-700 hover:scale-110 shadow-2xl shadow-cyber-cyan/20 hover:shadow-blue-500/30 backdrop-blur-sm border border-white/20 group relative overflow-hidden"
               onClick={() => window.open('https://github.com/adilmunawar', '_blank')}
             >
               <span className="relative z-10 flex items-center gap-2">

@@ -1,3 +1,4 @@
+
 import { Github, Instagram, Linkedin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -10,16 +11,18 @@ const HeroSection = () => {
     bgGradient: 'from-pink-500/20 to-purple-500/20',
     hoverGradient: 'hover:from-pink-500/40 hover:to-purple-500/40',
     borderColor: 'border-pink-400/30 hover:border-pink-400/60',
-    shadowColor: 'hover:shadow-pink-500/40'
+    shadowColor: 'hover:shadow-pink-500/40',
+    dotColor: 'bg-pink-400'
   }, {
     Icon: Github,
     href: 'https://github.com/adilmunawar',
     label: 'GitHub',
-    color: 'hover:text-white',
+    color: 'hover:text-gray-300',
     bgGradient: 'from-gray-500/20 to-slate-500/20',
     hoverGradient: 'hover:from-gray-500/40 hover:to-slate-500/40',
-    borderColor: 'border-gray-400/30 hover:border-white/60',
-    shadowColor: 'hover:shadow-gray-500/40'
+    borderColor: 'border-gray-400/30 hover:border-gray-400/60',
+    shadowColor: 'hover:shadow-gray-500/40',
+    dotColor: 'bg-gray-300'
   }, {
     Icon: Linkedin,
     href: 'https://linkedin.com/in/adilmunawar',
@@ -28,7 +31,8 @@ const HeroSection = () => {
     bgGradient: 'from-blue-500/20 to-indigo-500/20',
     hoverGradient: 'hover:from-blue-500/40 hover:to-indigo-500/40',
     borderColor: 'border-blue-400/30 hover:border-blue-400/60',
-    shadowColor: 'hover:shadow-blue-500/40'
+    shadowColor: 'hover:shadow-blue-500/40',
+    dotColor: 'bg-blue-400'
   }, {
     Icon: Phone,
     href: 'tel:+923244965220',
@@ -37,7 +41,8 @@ const HeroSection = () => {
     bgGradient: 'from-green-500/20 to-emerald-500/20',
     hoverGradient: 'hover:from-green-500/40 hover:to-emerald-500/40',
     borderColor: 'border-green-400/30 hover:border-green-400/60',
-    shadowColor: 'hover:shadow-green-500/40'
+    shadowColor: 'hover:shadow-green-500/40',
+    dotColor: 'bg-green-400'
   }];
 
   return (
@@ -74,7 +79,7 @@ const HeroSection = () => {
           
           {/* Professional name with subtle effects */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg relative">
-            <span className="text-gradient relative z-10">Adil Munawar</span>
+            <span className="text-gradient-slow relative z-10">Adil Munawar</span>
           </h1>
           
           {/* Professional subtitle */}
@@ -100,7 +105,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Professional social links */}
+        {/* Professional social links with tilt and dot effect */}
         <div className="flex justify-center space-x-6 mb-12 animate-scale-in" style={{
           animationDelay: '0.6s'
         }}>
@@ -110,13 +115,16 @@ const HeroSection = () => {
               href={social.href} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className={`group relative w-16 h-16 bg-gradient-to-br ${social.bgGradient} ${social.hoverGradient} rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-110 backdrop-blur-sm border-2 ${social.borderColor} hover:shadow-xl ${social.shadowColor} ${social.color}`}
+              className={`group relative w-16 h-16 bg-gradient-to-br ${social.bgGradient} ${social.hoverGradient} rounded-2xl flex items-center justify-center transition-all duration-500 hover:scale-110 hover:rotate-12 backdrop-blur-sm border-2 ${social.borderColor} hover:shadow-xl ${social.shadowColor} ${social.color}`}
               aria-label={social.label}
               style={{
                 animationDelay: `${index * 0.1}s`
               }}
             >
               <social.Icon size={24} className="transition-all duration-300 group-hover:scale-110" />
+              
+              {/* Animated notification dot */}
+              <div className={`absolute -top-1 -right-1 w-3 h-3 ${social.dotColor} rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse`}></div>
               
               {/* Subtle hover effects */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${social.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
