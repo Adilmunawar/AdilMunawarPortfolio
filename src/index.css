@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -195,24 +196,6 @@
   }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-@keyframes glow-pulse {
-  0%, 100% {
-    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(0, 245, 255, 0.8), 0 0 30px rgba(0, 245, 255, 0.4);
-  }
-}
-
 /* Utility classes */
 .professional-pulse {
   animation: professional-pulse 4s ease-in-out infinite;
@@ -289,35 +272,6 @@
   animation: glow 2s ease-in-out infinite;
 }
 
-.section-heading {
-  background: linear-gradient(135deg, #ffffff 0%, var(--cyber-cyan) 25%, var(--cyber-blue) 50%, #8b5cf6 75%, #ffffff 100%);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: text-gradient-flow 4s ease infinite;
-  text-shadow: none;
-}
-
-.section-heading:hover {
-  animation: text-gradient-flow 2s ease infinite, glow-pulse 2s ease infinite;
-}
-
-.text-gradient-enhanced {
-  background: linear-gradient(45deg, var(--cyber-cyan), var(--cyber-blue), #8b5cf6, #ec4899, var(--cyber-cyan));
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: text-gradient-flow 6s ease infinite;
-}
-
-.shimmer-text {
-  background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.4), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
-}
-
 /* Dark theme improvements */
 .bg-cyber-dark {
   background-color: var(--cyber-dark);
@@ -383,46 +337,4 @@
 /* Enhanced backdrop blur */
 .backdrop-blur-professional {
   backdrop-filter: blur(12px) saturate(1.8);
-}
-
-/* Testimonial carousel styles */
-.testimonial-card {
-  min-width: 350px;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.testimonial-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.testimonial-scroll {
-  animation: scroll-left 30s linear infinite;
-}
-
-.testimonial-scroll:hover {
-  animation-play-state: paused;
-}
-
-/* Star rating animation */
-@keyframes star-glow {
-  0%, 100% {
-    filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.6));
-  }
-  50% {
-    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.9));
-  }
-}
-
-.star-rating {
-  animation: star-glow 2s ease-in-out infinite;
 }
