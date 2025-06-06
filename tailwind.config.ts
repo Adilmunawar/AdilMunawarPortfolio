@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,8 +63,8 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        'cyber-dark': '#0a0a0a',
-        'cyber-gray': '#1a1a1a',
+        'cyber-dark': '#1a1a2e',
+        'cyber-gray': '#2a2a3e',
         'cyber-cyan': '#00ffff',
         'cyber-blue': '#0080ff',
       },

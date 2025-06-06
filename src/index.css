@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
@@ -324,10 +325,10 @@
   backface-visibility: hidden;
 }
 
-/* Color definitions */
+/* Updated color definitions - lighter dark theme */
 :root {
-  --cyber-dark: #0a0a0f;
-  --cyber-gray: #1a1a2e;
+  --cyber-dark: #1a1a2e;
+  --cyber-gray: #2a2a3e;
   --cyber-cyan: #00ffff;
   --cyber-blue: #0080ff;
   --cyber-purple: #8000ff;
