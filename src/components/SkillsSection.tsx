@@ -1,6 +1,7 @@
 
 import { Card } from '@/components/ui/card';
 import { Code, Database, Globe, Smartphone, Server, GitBranch, Zap, Shield } from 'lucide-react';
+import GitHubStats from './GitHubStats';
 
 const SkillsSection = () => {
   const skillCategories = [
@@ -55,7 +56,7 @@ const SkillsSection = () => {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient-flow animate-fade-in-up drop-shadow-lg">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 heading-gradient animate-fade-in-up drop-shadow-lg">
             Skills & Expertise
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in-up drop-shadow-md" style={{ animationDelay: '0.2s' }}>
@@ -63,11 +64,16 @@ const SkillsSection = () => {
           </p>
         </div>
 
+        {/* GitHub Stats Component */}
+        <div className="mb-16">
+          <GitHubStats />
+        </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <Card 
               key={index} 
-              className={`group relative p-6 bg-cyber-gray/30 ${category.borderColor} hover:border-cyber-cyan/60 transition-all duration-700 hover:scale-105 backdrop-blur-xl animate-scale-in overflow-hidden`}
+              className={`group relative p-6 bg-cyber-gray/30 ${category.borderColor} hover:border-cyber-cyan/60 transition-all duration-700 hover:scale-105 backdrop-blur-xl animate-scale-in overflow-hidden neon-hover`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Animated background gradient */}
