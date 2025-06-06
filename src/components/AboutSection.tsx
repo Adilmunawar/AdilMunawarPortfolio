@@ -44,7 +44,7 @@ const AboutSection = () => {
           <div className={`transition-all duration-1000 ${
             isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
           }`}>
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-gradient animate-shimmer">
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-gradient-flow animate-fade-in-up">
               About Me
             </h2>
             

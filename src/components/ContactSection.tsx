@@ -1,4 +1,3 @@
-
 import { Card } from '@/components/ui/card';
 import { Mail, Phone, Github, Instagram, MessageSquare, Linkedin, Send, MapPin, Clock } from 'lucide-react';
 import { useState } from 'react';
@@ -131,7 +130,7 @@ const ContactSection = () => {
               Get In Touch
             </span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 text-gradient-slow animate-fade-in-up drop-shadow-2xl">
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 text-gradient-flow animate-fade-in-up drop-shadow-2xl">
             Let's Connect
           </h2>
           <p className="text-xl text-gray-300 animate-fade-in-up max-w-4xl mx-auto leading-relaxed" style={{ animationDelay: '0.2s' }}>
@@ -216,7 +215,7 @@ const ContactSection = () => {
               <div className="inline-block relative">
                 <h4 className="text-2xl font-bold text-gray-200 mb-2">
                   Crafted with <span className="text-red-500 animate-pulse">♥</span> by 
-                  <span className="text-gradient-slow ml-2">Adil Munawar</span>
+                  <span className="text-gradient-flow ml-2">Adil Munawar</span>
                 </h4>
                 <p className="text-gray-400 mb-2">Full Stack Developer & UI/UX Enthusiast</p>
                 <p className="text-gray-500 text-sm">© 2025 All Rights Reserved. Built with React & Tailwind CSS</p>

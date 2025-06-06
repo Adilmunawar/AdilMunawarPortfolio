@@ -210,6 +210,15 @@
   animation: text-gradient-flow 6s ease infinite;
 }
 
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff, var(--cyber-cyan), var(--cyber-blue), #ffffff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-gradient-flow 8s ease infinite;
+}
+
 .heading-gradient {
   background: linear-gradient(135deg, #ffffff, var(--cyber-cyan), var(--cyber-blue), #ffffff);
   background-size: 300% 300%;
