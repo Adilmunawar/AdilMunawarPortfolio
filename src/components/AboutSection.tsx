@@ -1,5 +1,6 @@
 
 import { Card } from '@/components/ui/card';
+import ProfileCard from './ProfileCard';
 import { useState, useEffect } from 'react';
 
 const AboutSection = () => {
@@ -61,27 +62,22 @@ const AboutSection = () => {
 
         {/* Clean, balanced layout */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Professional image with clean effects */}
+          {/* Animated ProfileCard replacing the circular image */}
           <div className={`flex justify-center order-2 lg:order-1 transition-all duration-1000 ${
             isVisible ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-12'
           }`}>
-            <div className="relative group">
-              {/* Clean, subtle glow */}
-              <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-cyber-cyan/20 via-cyber-blue/20 to-purple-500/20 blur-xl group-hover:blur-2xl transition-all duration-700 will-change-transform" style={{ animation: 'spin 25s linear infinite' }}></div>
-              
-              {/* Main image container */}
-              <div className="relative w-72 h-72 lg:w-80 lg:h-80">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyber-cyan via-cyber-blue to-purple-500 p-0.5">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-cyber-dark">
-                    <img 
-                      src="/lovable-uploads/eaf50e40-682a-4730-ac3c-407cf3e4896e.png" 
-                      alt="Professional Portrait"
-                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 filter group-hover:brightness-110"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ProfileCard
+              name="Adil Munawar"
+              title="Prompt Engineer"
+              handle="Adil Munawar"
+              status="Online"
+              contactText="Contact Me"
+              avatarUrl="/lovable-uploads/eaf50e40-682a-4730-ac3c-407cf3e4896e.png"
+              miniAvatarUrl="/lovable-uploads/eaf50e40-682a-4730-ac3c-407cf3e4896e.png"
+              showUserInfo={true}
+              enableTilt={true}
+              onContactClick={() => console.log('Contact clicked')}
+            />
           </div>
 
           {/* Clean content */}
